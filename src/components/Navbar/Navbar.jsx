@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BiHomeAlt2 } from "react-icons/bi";
-import { FaRegListAlt } from "react-icons/fa";
+import { FaRegListAlt, FaRegUser } from "react-icons/fa";
 import { MdOutlineLocalOffer } from "react-icons/md";
-import { faUser, faShoppingCart, faHome, faListAlt, faTags } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faHome, faListAlt, faTags } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
-function Navbar() {
+const Navbar = () => {
   const [isHoveredHome, setIsHoveredHome] = useState(false);
   const [isHoveredList, setIsHoveredList] = useState(false);
   const [isHoveredOffer, setIsHoveredOffer] = useState(false);
@@ -35,6 +35,7 @@ function Navbar() {
   const handleMouseLeaveOffer = () => {
     setIsHoveredOffer(false);
   };
+
 
   const navlink = <>
     <div className="flex text-lg justify-center space-x-4 my-4">
@@ -67,7 +68,7 @@ function Navbar() {
               <FaRegListAlt className="mr-2" />
             )}
           </span>
-          <p className='text-base font-bold m-2'>Shop by Category</p>
+          <p className='text-base font-bold m-2'>Shop By Category</p>
         </a>
       </NavLink>
 
@@ -102,7 +103,7 @@ function Navbar() {
           <div className='max-w-[719px] w-1/2 relative'>
             <div className="flex w-full rounded-md overflow-hidden">
               <div className="relative flex-1">
-                <input type="text" className="block w-full p-3 pl-4 outline-none bg-[#eaefef]" placeholder="Search in OGF" />
+                <input type="text" className="block w-full p-3 pl-4 outline-none bg-[#eaefef]" placeholder="Search in OGS" />
               </div>
               <button className="gap-2 p-2 px-5 text-lg font-medium text-white bg-gray-700">Search</button>
             </div>
@@ -110,13 +111,26 @@ function Navbar() {
 
           {/* Sign in and Cart */}
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-black hover:text-gray-300"><FontAwesomeIcon icon={faUser} size="lg" /></a>
             <a href="#" className="text-black hover:text-gray-300"><FontAwesomeIcon icon={faShoppingCart} size="lg" /></a>
+            {/* <a href="#" className="text-black dropdown dropdown-hover">
+              <FaRegUser size={23} />
+            </a> */}
+            <a href="#" className="dropdown dropdown-hover dropdown-end">
+              <a tabIndex={0}><FaRegUser size={23} /></a>
+              <ul tabIndex={0} className="dropdown-content menu shadow bg-base-100 rounded-box w-52">
+                <NavLink to="/login">
+                  <li>
+                    <a>Login</a>
+                  </li>
+                </NavLink>
+              </ul>
+            </a>
           </div>
         </div>
         {/* Navbar links */}
         {navlink}
       </div>
+
     </nav>
   );
 }
