@@ -1,12 +1,13 @@
 import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import GoogleLogin from './GoogleLogin';
 
 const Login = () => {
   const { logIN } = useContext(AuthContext);
-  const [user, setUser] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
+  
   const [email, setEmail] = useState(''); // Change  to email
   const [password, setPassword] = useState('');
 
@@ -16,7 +17,6 @@ const Login = () => {
       const result = await logIN(email, password);
       const user = result.user;
       console.log("SE:", user);
-      setUser(user);
       //console.log('Logging in with email:', email, 'and password:', password); // Change  to email
       navigate(location?.state ? location.state : '/');
     }
@@ -94,12 +94,10 @@ const Login = () => {
             </button>
           </div>
         </form>
+
+        <GoogleLogin></GoogleLogin>
         <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
-        {user &&
-          <div>
-            <h2>User:{user.displayName}</h2>
-          </div>
-        }
+        
       </div>
     </div>
   );
