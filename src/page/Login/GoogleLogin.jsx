@@ -1,28 +1,30 @@
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import app from "../../firebase/firebase.config";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const GoogleLogin = () => {
 
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth(app);
+
+    const { loginWithGoogle } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, provider)
+        loginWithGoogle()
             .then((result) => {
+                // The signed-in user info.
                 const user = result.user;
+                console.log(user);
                 navigate(location?.state ? location.state : '/');
-    
             })
             .catch((error) => {
-                console.error('Error signing up:', error.message);
+                console.error(error);
             })
-
     }
+
+
     return (
         <div>
             <p className="text-center">Or Login With<button onClick={handleGoogleSignIn} className='btn text-[2rem] w-full'><FcGoogle></FcGoogle>
