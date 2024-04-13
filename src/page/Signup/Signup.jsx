@@ -1,15 +1,47 @@
-import React, { useState } from 'react';
+import { useContext, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Signup = () => {
+  const { createUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [passwordValidationMessage, setPasswordValidationMessage] = useState('');
 
-  const handleSignup = () => {
-    // Your Signup logic goes here
-    console.log('Signing up with first name:', firstName, 'last name:', lastName, 'email:', email, 'and password:', password);
+  const handleSignup = async () => {
+    if (password !== confirmPassword) {
+      setPasswordsMatch(false);
+      setPasswordValidationMessage('Passwords do not match');
+      return; // Don't proceed with signup if passwords don't match
+    } else {
+      setPasswordsMatch(true);
+      setPasswordValidationMessage('Passwords match');
+      // Your Signup logic goes here
+      try {
+        const result = await createUser(email, password);
+        const loggedUser = result.user;
+        // console.log("Name:",loggedUser);
+        const displayName = `${firstName} ${lastName}`;
+
+        // Update user profile with display name
+        await updateProfile(loggedUser, {
+          displayName: displayName
+        })
+        //console.log('Signing up with first name:', firstName, 'last name:', lastName, 'email:', email, 'and password:', password);
+        navigate(location?.state ? location.state : '/');
+      } catch (error) {
+        console.error('Error signing up:', error.message);
+      }
+    }
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -69,10 +101,27 @@ const Signup = () => {
                 type="password"
                 autoComplete="new-password"
                 required
-                className="appearance-none my-1 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="confirmPassword" className="sr-only">Confirm Password</label>
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                autoComplete="new-password"
+                required
+                className="appearance-none my-1 rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => {
+                  setConfirmPassword(e.target.value);
+                  setPasswordsMatch(e.target.value === password);
+                }}
               />
             </div>
           </div>
@@ -87,6 +136,11 @@ const Signup = () => {
             </button>
           </div>
         </form>
+
+        {/* Password validation message */}
+        {passwordValidationMessage && (
+          <p className={passwordsMatch ? "text-green-500 text-sm" : "text-red-500 text-sm"}>{passwordValidationMessage}</p>
+        )}
       </div>
     </div>
   );

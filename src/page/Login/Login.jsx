@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+  const { logIN } = useContext(AuthContext);
+  const [user, setUser] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
   const [email, setEmail] = useState(''); // Change  to email
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Your login logic goes here
-    console.log('Logging in with email:', email, 'and password:', password); // Change  to email
+  const handleLogin = async () => {
+    // login logic goes here
+    try {
+      const result = await logIN(email, password);
+      const user = result.user;
+      console.log("SE:", user);
+      setUser(user);
+      //console.log('Logging in with email:', email, 'and password:', password); // Change  to email
+      navigate(location?.state ? location.state : '/');
+    }
+    catch (error) {
+      console.error('Error signing up:', error.message);
+    }
   };
 
   return (
@@ -79,7 +94,12 @@ const Login = () => {
             </button>
           </div>
         </form>
-        <p>Don't have an account? <NavLink to="/signup">Sign up</NavLink></p>
+        <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+        {user &&
+          <div>
+            <h2>User:{user.displayName}</h2>
+          </div>
+        }
       </div>
     </div>
   );
