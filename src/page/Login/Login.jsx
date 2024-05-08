@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
 import GoogleLogin from './GoogleLogin';
+import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
-  const { logIN } = useContext(AuthContext);
+  const { logIN } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   
@@ -64,7 +64,7 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+          {/* <div className="flex items-center justify-between">
             <div className="flex items-center">
               <input
                 id="remember_me"
@@ -82,7 +82,7 @@ const Login = () => {
                 Forgot your password?
               </a>
             </div>
-          </div>
+          </div> */}
 
           <div>
             <button

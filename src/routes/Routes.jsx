@@ -6,6 +6,8 @@ import Login from "../page/Login/Login";
 import Signup from "../page/Signup/Signup";
 import Offer from "../page/Offer/Offer";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
+import Dashboard from "../layout/Dashboard";
 
 
 const router = createBrowserRouter([
@@ -16,7 +18,9 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('https://online-gift-shop-server.vercel.app/product')
+       // fetch("https://assignment-11-server-six-mocha.vercel.app/assignment")
       },
       {
         path: "/category",
@@ -36,6 +40,11 @@ const router = createBrowserRouter([
       }
     ]
   },
+
+  {
+    path: 'dashboard',
+    element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>
+  }
 ]);
 
 export default router;

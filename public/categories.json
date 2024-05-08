@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Smart Refrigerator",
+    "brand": "SmartTech",
+    "description": "A high-tech refrigerator with smart features such as touchscreen display, Wi-Fi connectivity, and energy-saving modes.",
+    "price": 1500,
+    "category": "home_appliances",
+    "photos": ["smart_refrigerator_1.jpg", "smart_refrigerator_2.jpg"]
+  },
+  {
+    "name": "Robot Vacuum Cleaner",
+    "brand": "CleanTech",
+    "description": "An autonomous vacuum cleaner that navigates your home, cleaning floors efficiently and effectively.",
+    "price": 400,
+    "category": "home_appliances",
+    "photos": ["robot_vacuum_cleaner_1.jpg", "robot_vacuum_cleaner_2.jpg"]
+  },
+  {
+    "name": "Slim Fit Suit",
+    "brand": "FashionElite",
+    "description": "A sleek and stylish slim-fit suit perfect for formal occasions.",
+    "price": 300,
+    "category": "wardrobe_men",
+    "photos": ["slim_fit_suit_men_1.jpg", "slim_fit_suit_men_2.jpg"]
+  },
+  {
+    "name": "Leather Jacket",
+    "brand": "LeatherCraft",
+    "description": "A classic leather jacket that adds edge to any outfit.",
+    "price": 200,
+    "category": "wardrobe_men",
+    "photos": ["leather_jacket_men_1.jpg", "leather_jacket_men_2.jpg"]
+  },
+  {
+    "name": "Wrap Dress",
+    "brand": "ChicStyle",
+    "description": "A versatile and flattering wrap dress suitable for both casual and formal occasions.",
+    "price": 150,
+    "category": "wardrobe_women",
+    "photos": ["wrap_dress_women_1.jpg", "wrap_dress_women_2.jpg"]
+  },
+  {
+    "name": "High Heels",
+    "brand": "EleganceShoes",
+    "description": "Elegant high heels that elevate your style and comfort.",
+    "price": 100,
+    "category": "wardrobe_women",
+    "photos": ["high_heels_women_1.jpg", "high_heels_women_2.jpg"]
+  },
+  {
+    "name": "Standing Desk",
+    "brand": "ErgoWork",
+    "description": "An adjustable standing desk that promotes better posture and reduces sedentary behavior.",
+    "price": 600,
+    "category": "office_equipment",
+    "photos": ["standing_desk_1.jpg", "standing_desk_2.jpg"]
+  },
+  {
+    "name": "Wireless Keyboard and Mouse Combo",
+    "brand": "TechGear",
+    "description": "A sleek and ergonomic wireless keyboard and mouse set for increased productivity.",
+    "price": 80,
+    "category": "office_equipment",
+    "photos": ["wireless_keyboard_mouse_1.jpg", "wireless_keyboard_mouse_2.jpg"]
+  },
+  {
+    "name": "Electric Car",
+    "brand": "EcoDrive",
+    "description": "A zero-emission electric car with advanced safety features and a long-range battery.",
+    "price": 35000,
+    "category": "automobiles",
+    "photos": ["electric_car_1.jpg", "electric_car_2.jpg"]
+  },
+  {
+    "name": "SUV",
+    "brand": "AdventureAuto",
+    "description": "A spacious and rugged SUV equipped for both urban and off-road adventures.",
+    "price": 45000,
+    "category": "automobiles",
+    "photos": ["suv_1.jpg", "suv_2.jpg"]
+  },
+  {
+    "name": "Smartphone",
+    "brand": "TechGiant",
+    "description": "A flagship smartphone with cutting-edge technology, high-resolution display, and powerful camera.",
+    "price": 1000,
+    "category": "phones",
+    "photos": ["smartphone_1.jpg", "smartphone_2.jpg"]
+  },
+  {
+    "name": "Budget Smartphone",
+    "brand": "ValueTech",
+    "description": "An affordable smartphone with decent performance and essential features.",
+    "price": 200,
+    "category": "phones",
+    "photos": ["budget_smartphone_1.jpg", "budget_smartphone_2.jpg"]
+  },
+  {
+    "name": "5G Router",
+    "brand": "ConnectTech",
+    "description": "A high-speed 5G router for ultra-fast internet connectivity at home or in the office.",
+    "price": 300,
+    "category": "telecommunication_devices",
+    "photos": ["5g_router_1.jpg", "5g_router_2.jpg"]
+  },
+  {
+    "name": "VoIP Phone",
+    "brand": "ClearVoice",
+    "description": "A Voice over Internet Protocol (VoIP) phone for clear and reliable communication over the internet.",
+    "price": 50,
+    "category": "telecommunication_devices",
+    "photos": ["voip_phone_1.jpg", "voip_phone_2.jpg"]
+  }
+]

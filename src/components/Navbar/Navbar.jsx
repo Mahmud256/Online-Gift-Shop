@@ -1,15 +1,15 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BiHomeAlt2 } from "react-icons/bi";
 import { FaRegListAlt, FaRegUser } from "react-icons/fa";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import { faShoppingCart, faHome, faListAlt, faTags } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
 import Logout from '../../page/Logout/Logout';
+import useAuth from '../../hooks/useAuth';
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
 
   const [isHoveredHome, setIsHoveredHome] = useState(false);
   const [isHoveredList, setIsHoveredList] = useState(false);

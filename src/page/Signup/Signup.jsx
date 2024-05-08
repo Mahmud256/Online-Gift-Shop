@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useAuth from '../../hooks/useAuth';
 
 const Signup = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -28,7 +28,7 @@ const Signup = () => {
       try {
         const result = await createUser(email, password);
         const loggedUser = result.user;
-        console.log("Name:",loggedUser);
+        console.log("Name:", loggedUser);
         const displayName = `${firstName} ${lastName}`;
 
         // Update user profile with display name
