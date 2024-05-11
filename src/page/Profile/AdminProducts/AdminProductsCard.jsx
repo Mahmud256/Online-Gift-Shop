@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 
-const ProductsCard = ({ product }) => {
+import { Link } from "react-router-dom";
+
+
+const AdminProductsCard = ({ product }) => {
     console.log("pc:", product);
-    const { name, brand, price, product_img } = product || {};
+    const { _id, name, brand, price, product_img } = product || {};
     return (
         <div>
 
@@ -19,6 +22,10 @@ const ProductsCard = ({ product }) => {
                         {price}
                     </h2>
                     <img src={product_img} alt={name} className="w-full" />
+
+                    <Link to={`/profile/updateProduct/${_id}`}>
+                        <button className="btn bg-orange-600 hover:bg-orange-600 normal-case text-lg font-semibold text-[#fff]">Update</button>
+                    </Link>
                 </div>
             </div>
 
@@ -27,4 +34,4 @@ const ProductsCard = ({ product }) => {
     );
 };
 
-export default ProductsCard;
+export default AdminProductsCard;

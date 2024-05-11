@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import ProductsCard from './ProductsCard';
 
 const Products = ({ allproducts }) => {
@@ -9,7 +9,7 @@ const Products = ({ allproducts }) => {
             <div className="Allserv flex justify-around py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {allproducts.map(product => (
-                        <ProductsCard key={product.name} product={product} />
+                        <ProductsCard key={product._id} product={product} />
                     ))}
                 </div>
             </div>

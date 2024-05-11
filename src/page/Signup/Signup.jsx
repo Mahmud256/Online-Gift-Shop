@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 import useAuth from '../../hooks/useAuth';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const Signup = () => {
+  const axiosPublic = useAxiosPublic();
   const { createUser } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -35,8 +37,22 @@ const Signup = () => {
         await updateProfile(loggedUser, {
           displayName: displayName
         })
+
+        const userInfo = {
+          email: loggedUser?.email,
+          name: loggedUser?.displayName
+        };
+        
         //console.log('Signing up with first name:', firstName, 'last name:', lastName, 'email:', email, 'and password:', password);
-        navigate(location?.state ? location.state : '/');
+        axiosPublic.post('/users', userInfo)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        console.log('user added to the database')
+
+                       
+                        navigate(location?.state ? location.state : '/');
+                    }
+                })
       } catch (error) {
         console.error('Error signing up:', error.message);
       }
