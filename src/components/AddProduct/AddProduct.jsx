@@ -14,9 +14,9 @@ const AddProduct = () => {
         const brand = form.brand.value;
         const category = form.category.value;
         const description = form.description.value;
-        const product_img = form.photo.value;
+        const photos = form.photo.value;
 
-        const newProduct = { name, price, brand, category, description, product_img };
+        const newProduct = { name, price, brand, category, description, photos };
         console.log(newProduct);
 
         // Send data to the server
