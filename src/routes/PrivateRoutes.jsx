@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import { AuthContext } from '../providers/AuthProvider';
+/* eslint-disable react/prop-types */
 import { Navigate, useLocation } from 'react-router-dom';
-import { propTypes } from 'prop-types';
+import useAuth from '../hooks/useAuth';
 
 const PrivateRoutes = ({ children }) => {
-    const { user, loading } = useContext(AuthContext);
+    const { user, loading } = useAuth();
     const location = useLocation();
 
     if(loading)
@@ -22,6 +21,6 @@ const PrivateRoutes = ({ children }) => {
 
 export default PrivateRoutes;
 
-PrivateRoutes.propTypes = {
-    children: propTypes.node,
-}
+// PrivateRoutes.propTypes = {
+//     children: propTypes.node,
+// }

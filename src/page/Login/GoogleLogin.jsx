@@ -1,23 +1,37 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
 const GoogleLogin = () => {
 
 
-    const { loginWithGoogle } = useContext(AuthContext);
+    // const { loginWithGoogle } = useAuth();
+    const auth = getAuth();
+    const axiosPublic = useAxiosPublic();
+    const provider = new GoogleAuthProvider();
     const location = useLocation();
     const navigate = useNavigate();
 
 
     const handleGoogleSignIn = () => {
-        loginWithGoogle()
+        signInWithPopup(auth, provider)
             .then((result) => {
-                // The signed-in user info.
-                const user = result.user;
-                console.log(user);
-                navigate(location?.state ? location.state : '/');
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
+                console.log('User Info:', userInfo); // Check if the user object is correctly populated
+
+                // setUser(userInfo);
+
+                // Display a success message with SweetAlert2
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log("Done:",res.data);
+                        navigate(location?.state ? location.state : '/');
+
+                    })
             })
             .catch((error) => {
                 console.error(error);
