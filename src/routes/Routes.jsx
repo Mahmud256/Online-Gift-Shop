@@ -6,6 +6,14 @@ import Login from "../page/Login/Login";
 import Signup from "../page/Signup/Signup";
 import Offer from "../page/Offer/Offer";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
+import Dashboard from "../layout/Dashboard";
+import AdminRoute from "./AdminRoute";
+import AdminHome from "../page/Profile/AdminHome/AdminHome";
+import UserHome from "../page/Profile/UserHome/UserHome";
+import AddProduct from "../components/AddProduct/AddProduct";
+import AdminProducts from "../page/Profile/AdminProducts/AdminProducts";
+import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 
 
 const router = createBrowserRouter([
@@ -16,7 +24,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('https://online-gift-shop-server.vercel.app/product')
       },
       {
         path: "/category",
@@ -34,8 +43,43 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Signup></Signup>
       }
+      // {
+      //   path: '/updateProduct',
+      //   element: <Offer></Offer>
+      // }
     ]
   },
+
+  {
+    path: 'profile',
+    element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+    children: [
+      // Normal User Route
+      {
+        path: 'userHome',
+        element: <PrivateRoutes><UserHome></UserHome></PrivateRoutes>
+      },
+
+      // Admin Route
+      {
+        path: 'adminHome',
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+      },
+      {
+        path: 'addProduct',
+        element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
+      },
+      {
+        path: 'adminProducts',
+        element: <AdminRoute><AdminProducts></AdminProducts></AdminRoute>
+      },
+      {
+        path: 'updateProduct/:id',
+        element: <AdminRoute><UpdateProduct></UpdateProduct></AdminRoute>,
+        loader: ({params}) => fetch(`https://online-gift-shop-server.vercel.app/product/${params.id}`)
+      }
+    ]
+  }
 ]);
 
 export default router;
