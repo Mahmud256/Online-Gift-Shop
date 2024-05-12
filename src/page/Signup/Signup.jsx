@@ -1,13 +1,15 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useAuth from '../../hooks/useAuth';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const Signup = () => {
-  const { createUser } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+  const { createUser } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -28,15 +30,29 @@ const Signup = () => {
       try {
         const result = await createUser(email, password);
         const loggedUser = result.user;
-        console.log("Name:",loggedUser);
+        console.log("Name:", loggedUser);
         const displayName = `${firstName} ${lastName}`;
 
         // Update user profile with display name
         await updateProfile(loggedUser, {
           displayName: displayName
         })
+
+        const userInfo = {
+          email: loggedUser?.email,
+          name: loggedUser?.displayName
+        };
+        
         //console.log('Signing up with first name:', firstName, 'last name:', lastName, 'email:', email, 'and password:', password);
-        navigate(location?.state ? location.state : '/');
+        axiosPublic.post('/users', userInfo)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        console.log('user added to the database')
+
+                       
+                        navigate(location?.state ? location.state : '/');
+                    }
+                })
       } catch (error) {
         console.error('Error signing up:', error.message);
       }
