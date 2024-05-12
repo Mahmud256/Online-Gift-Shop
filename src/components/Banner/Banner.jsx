@@ -1,6 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import img1 from '../../assets/b1.jpg'
+import img1 from '../../assets/c1.jpg'
 import img2 from '../../assets/b2.jpg'
 import img3 from '../../assets/b3.jpg'
 import img4 from '../../assets/b4.jpg'

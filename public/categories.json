@@ -1,114 +1,991 @@
 [
   {
-    "name": "Smart Refrigerator",
-    "brand": "SmartTech",
-    "description": "A high-tech refrigerator with smart features such as touchscreen display, Wi-Fi connectivity, and energy-saving modes.",
-    "price": 1500,
-    "category": "home_appliances",
-    "photos": ["smart_refrigerator_1.jpg", "smart_refrigerator_2.jpg"]
+    "name": "Galaxy S21 Ultra",
+    "brand": "Samsung",
+    "description": "Samsung Galaxy S21 Ultra is a flagship smartphone featuring a 6.8-inch Dynamic AMOLED display, Snapdragon 888 chipset, quad-camera setup with a 108MP main sensor, and a large 5000mAh battery.",
+    "price": 1199.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/s21-ultra-photo1.jpg",
+      "https://example.com/s21-ultra-photo2.jpg"
+    ]
   },
   {
-    "name": "Robot Vacuum Cleaner",
-    "brand": "CleanTech",
-    "description": "An autonomous vacuum cleaner that navigates your home, cleaning floors efficiently and effectively.",
-    "price": 400,
-    "category": "home_appliances",
-    "photos": ["robot_vacuum_cleaner_1.jpg", "robot_vacuum_cleaner_2.jpg"]
+    "name": "Galaxy Note 20 Ultra",
+    "brand": "Samsung",
+    "description": "Samsung Galaxy Note 20 Ultra is a premium smartphone with an S Pen stylus, a 6.9-inch Dynamic AMOLED display, Snapdragon 865+ chipset, triple-camera setup with a 108MP main sensor, and a 4500mAh battery.",
+    "price": 1299.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/note-20-ultra-photo1.jpg",
+      "https://example.com/note-20-ultra-photo2.jpg"
+    ]
   },
   {
-    "name": "Slim Fit Suit",
-    "brand": "FashionElite",
-    "description": "A sleek and stylish slim-fit suit perfect for formal occasions.",
-    "price": 300,
-    "category": "wardrobe_men",
-    "photos": ["slim_fit_suit_men_1.jpg", "slim_fit_suit_men_2.jpg"]
+    "name": "Galaxy Z Fold 3",
+    "brand": "Samsung",
+    "description": "Samsung Galaxy Z Fold 3 is a foldable smartphone featuring a 7.6-inch foldable Dynamic AMOLED display, Snapdragon 888 chipset, triple-camera setup, and support for S Pen stylus.",
+    "price": 1799.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/z-fold-3-photo1.jpg",
+      "https://example.com/z-fold-3-photo2.jpg"
+    ]
   },
   {
-    "name": "Leather Jacket",
-    "brand": "LeatherCraft",
-    "description": "A classic leather jacket that adds edge to any outfit.",
-    "price": 200,
-    "category": "wardrobe_men",
-    "photos": ["leather_jacket_men_1.jpg", "leather_jacket_men_2.jpg"]
+    "name": "Galaxy Z Flip 3",
+    "brand": "Samsung",
+    "description": "Samsung Galaxy Z Flip 3 is a compact foldable smartphone featuring a 6.7-inch foldable Dynamic AMOLED display, Snapdragon 888 chipset, dual-camera setup, and a unique clamshell design.",
+    "price": 999.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/z-flip-3-photo1.jpg",
+      "https://example.com/z-flip-3-photo2.jpg"
+    ]
   },
   {
-    "name": "Wrap Dress",
-    "brand": "ChicStyle",
-    "description": "A versatile and flattering wrap dress suitable for both casual and formal occasions.",
-    "price": 150,
-    "category": "wardrobe_women",
-    "photos": ["wrap_dress_women_1.jpg", "wrap_dress_women_2.jpg"]
+    "name": "Galaxy Note 10 Lite",
+    "brand": "Samsung",
+    "description": "Samsung Galaxy Note 10 Lite is a more affordable variant of the Note series, featuring a 6.7-inch Super AMOLED display, Exynos 9810 chipset, triple-camera setup, and an S Pen stylus.",
+    "price": 549.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/note-10-lite-photo1.jpg",
+      "https://example.com/note-10-lite-photo2.jpg"
+    ]
   },
   {
-    "name": "High Heels",
-    "brand": "EleganceShoes",
-    "description": "Elegant high heels that elevate your style and comfort.",
-    "price": 100,
-    "category": "wardrobe_women",
-    "photos": ["high_heels_women_1.jpg", "high_heels_women_2.jpg"]
+    "name": "Realme GT 2 Pro",
+    "brand": "Realme",
+    "description": "The Realme GT 2 Pro is a flagship smartphone powered by the Snapdragon 8 Gen 1 chipset. It features a 6.7-inch Super AMOLED display with a 120Hz refresh rate, a triple-camera setup with a 108MP primary sensor, and a 5000mAh battery with 65W fast charging support.",
+    "price": 799.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/gt-2-pro-photo1.jpg",
+      "https://example.com/gt-2-pro-photo2.jpg"
+    ]
   },
   {
-    "name": "Standing Desk",
-    "brand": "ErgoWork",
-    "description": "An adjustable standing desk that promotes better posture and reduces sedentary behavior.",
-    "price": 600,
-    "category": "office_equipment",
-    "photos": ["standing_desk_1.jpg", "standing_desk_2.jpg"]
+    "name": "Realme GT Neo 3",
+    "brand": "Realme",
+    "description": "The Realme GT Neo 3 is a high-performance smartphone featuring the MediaTek Dimensity 9000 chipset. It comes with a 6.8-inch Super AMOLED display with a 144Hz refresh rate, a triple-camera setup with a 64MP primary sensor, and a 5000mAh battery with 125W fast charging support.",
+    "price": 599.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/gt-neo-3-photo1.jpg",
+      "https://example.com/gt-neo-3-photo2.jpg"
+    ]
   },
   {
-    "name": "Wireless Keyboard and Mouse Combo",
-    "brand": "TechGear",
-    "description": "A sleek and ergonomic wireless keyboard and mouse set for increased productivity.",
-    "price": 80,
-    "category": "office_equipment",
-    "photos": ["wireless_keyboard_mouse_1.jpg", "wireless_keyboard_mouse_2.jpg"]
+    "name": "Realme X9 Pro",
+    "brand": "Realme",
+    "description": "The Realme X9 Pro is a premium mid-range smartphone powered by the Qualcomm Snapdragon 870 chipset. It features a 6.55-inch Super AMOLED display with a 120Hz refresh rate, a triple-camera setup with a 50MP primary sensor, and a 4500mAh battery with 65W fast charging support.",
+    "price": 499.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/x9-pro-photo1.jpg",
+      "https://example.com/x9-pro-photo2.jpg"
+    ]
   },
   {
-    "name": "Electric Car",
-    "brand": "EcoDrive",
-    "description": "A zero-emission electric car with advanced safety features and a long-range battery.",
-    "price": 35000,
-    "category": "automobiles",
-    "photos": ["electric_car_1.jpg", "electric_car_2.jpg"]
+    "name": "Realme GT Master Edition",
+    "brand": "Realme",
+    "description": "The Realme GT Master Edition is a stylish smartphone designed by Naoto Fukasawa. It features a Qualcomm Snapdragon 778G chipset, a 6.43-inch Super AMOLED display, a triple-camera setup with a 64MP primary sensor, and a 4300mAh battery with 65W fast charging support.",
+    "price": 399.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/gt-master-edition-photo1.jpg",
+      "https://example.com/gt-master-edition-photo2.jpg"
+    ]
   },
   {
-    "name": "SUV",
-    "brand": "AdventureAuto",
-    "description": "A spacious and rugged SUV equipped for both urban and off-road adventures.",
-    "price": 45000,
-    "category": "automobiles",
-    "photos": ["suv_1.jpg", "suv_2.jpg"]
+    "name": "Realme GT Neo 2T",
+    "brand": "Realme",
+    "description": "The Realme GT Neo 2T is a mid-range smartphone powered by the Qualcomm Snapdragon 870 chipset. It features a 6.43-inch Super AMOLED display with a 120Hz refresh rate, a triple-camera setup with a 50MP primary sensor, and a 5000mAh battery with 65W fast charging support.",
+    "price": 349.99,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/gt-neo-2t-photo1.jpg",
+      "https://example.com/gt-neo-2t-photo2.jpg"
+    ]
   },
   {
-    "name": "Smartphone",
-    "brand": "TechGiant",
-    "description": "A flagship smartphone with cutting-edge technology, high-resolution display, and powerful camera.",
-    "price": 1000,
-    "category": "phones",
-    "photos": ["smartphone_1.jpg", "smartphone_2.jpg"]
+    "name": "iPhone 13 Pro Max",
+    "brand": "iPhone",
+    "description": "The iPhone 13 Pro Max is Apple's flagship smartphone featuring a 6.7-inch Super Retina XDR display, A15 Bionic chip, triple-camera system with LiDAR scanner, and up to 1TB of storage.",
+    "price": 1099.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/iphone-13-pro-max-photo1.jpg",
+      "https://example.com/iphone-13-pro-max-photo2.jpg"
+    ]
   },
   {
-    "name": "Budget Smartphone",
-    "brand": "ValueTech",
-    "description": "An affordable smartphone with decent performance and essential features.",
-    "price": 200,
-    "category": "phones",
-    "photos": ["budget_smartphone_1.jpg", "budget_smartphone_2.jpg"]
+    "name": "iPhone 13",
+    "brand": "iPhone",
+    "description": "The iPhone 13 is Apple's mainstream smartphone featuring a 6.1-inch Super Retina XDR display, A15 Bionic chip, dual-camera system with Night mode, and up to 512GB of storage.",
+    "price": 799.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/iphone-13-photo1.jpg",
+      "https://example.com/iphone-13-photo2.jpg"
+    ]
   },
   {
-    "name": "5G Router",
-    "brand": "ConnectTech",
-    "description": "A high-speed 5G router for ultra-fast internet connectivity at home or in the office.",
-    "price": 300,
-    "category": "telecommunication_devices",
-    "photos": ["5g_router_1.jpg", "5g_router_2.jpg"]
+    "name": "iPhone 12 Mini",
+    "brand": "iPhone",
+    "description": "The iPhone 12 Mini is Apple's compact smartphone featuring a 5.4-inch Super Retina XDR display, A14 Bionic chip, dual-camera system with Night mode, and up to 256GB of storage.",
+    "price": 699.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/iphone-12-mini-photo1.jpg",
+      "https://example.com/iphone-12-mini-photo2.jpg"
+    ]
   },
   {
-    "name": "VoIP Phone",
-    "brand": "ClearVoice",
-    "description": "A Voice over Internet Protocol (VoIP) phone for clear and reliable communication over the internet.",
-    "price": 50,
-    "category": "telecommunication_devices",
-    "photos": ["voip_phone_1.jpg", "voip_phone_2.jpg"]
+    "name": "iPhone SE (2020)",
+    "brand": "iPhone",
+    "description": "The iPhone SE (2020) is Apple's affordable smartphone featuring a 4.7-inch Retina HD display, A13 Bionic chip, single-camera system with Portrait mode, and up to 256GB of storage.",
+    "price": 399.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/iphone-se-2020-photo1.jpg",
+      "https://example.com/iphone-se-2020-photo2.jpg"
+    ]
+  },
+  {
+    "name": "iPhone XR",
+    "brand": "iPhone",
+    "description": "The iPhone XR is Apple's previous-generation smartphone featuring a 6.1-inch Liquid Retina HD display, A12 Bionic chip, single-camera system with Portrait mode, and up to 256GB of storage.",
+    "price": 499.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/iphone-xr-photo1.jpg",
+      "https://example.com/iphone-xr-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Vivo X70 Pro+",
+    "brand": "Vivo",
+    "description": "The Vivo X70 Pro+ is a flagship smartphone featuring a 6.78-inch Super AMOLED display, Snapdragon 888+ chipset, quad-camera setup with Zeiss optics, and a 4500mAh battery with 55W fast charging.",
+    "price": 999.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/x70-pro+-photo1.jpg",
+      "https://example.com/x70-pro+-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Vivo X60 Pro",
+    "brand": "Vivo",
+    "description": "The Vivo X60 Pro is a premium smartphone featuring a 6.56-inch AMOLED display, Snapdragon 870 chipset, triple-camera setup with Zeiss optics, and a 4200mAh battery with 33W fast charging.",
+    "price": 799.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/x60-pro-photo1.jpg",
+      "https://example.com/x60-pro-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Vivo V21",
+    "brand": "Vivo",
+    "description": "The Vivo V21 is a mid-range smartphone featuring a 6.44-inch AMOLED display, MediaTek Dimensity 800U chipset, triple-camera setup with OIS, and a 4000mAh battery with 33W fast charging.",
+    "price": 499.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/v21-photo1.jpg",
+      "https://example.com/v21-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Vivo Y73",
+    "brand": "Vivo",
+    "description": "The Vivo Y73 is an affordable smartphone featuring a 6.44-inch AMOLED display, MediaTek Helio G95 chipset, triple-camera setup with a 64MP main sensor, and a 4000mAh battery.",
+    "price": 299.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/y73-photo1.jpg",
+      "https://example.com/y73-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Vivo Y20G",
+    "brand": "Vivo",
+    "description": "The Vivo Y20G is a budget-friendly smartphone featuring a 6.51-inch IPS LCD display, MediaTek Helio G80 chipset, triple-camera setup, and a 5000mAh battery.",
+    "price": 199.00,
+    "category": "Smartphone",
+    "photos": [
+      "https://example.com/y20g-photo1.jpg",
+      "https://example.com/y20g-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Toyota Camry",
+    "brand": "Toyota",
+    "description": "The Toyota Camry is a popular mid-size sedan known for its reliability, comfort, and fuel efficiency. It features a spacious interior, smooth ride, and advanced safety features.",
+    "price": 24995.00,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/camry-photo1.jpg",
+      "https://example.com/camry-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Toyota RAV4",
+    "brand": "Toyota",
+    "description": "The Toyota RAV4 is a compact SUV renowned for its versatility, off-road capability, and practicality. It offers a comfortable ride, spacious cabin, and a host of standard safety features.",
+    "price": 26990.00,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/rav4-photo1.jpg",
+      "https://example.com/rav4-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Toyota Corolla",
+    "brand": "Toyota",
+    "description": "The Toyota Corolla is a compact sedan known for its reliability, fuel efficiency, and value. It offers a comfortable ride, user-friendly features, and a reputation for low ownership costs.",
+    "price": 20250.00,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/corolla-photo1.jpg",
+      "https://example.com/corolla-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Toyota Tacoma",
+    "brand": "Toyota",
+    "description": "The Toyota Tacoma is a rugged mid-size pickup truck designed for off-road adventures and everyday practicality. It offers strong performance, excellent towing capability, and a durable build.",
+    "price": 26925.00,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/tacoma-photo1.jpg",
+      "https://example.com/tacoma-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Toyota Highlander",
+    "brand": "Toyota",
+    "description": "The Toyota Highlander is a versatile mid-size SUV known for its spacious interior, smooth ride, and strong reliability. It offers comfortable seating for up to eight passengers and a wide array of standard safety features.",
+    "price": 35985.00,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/highlander-photo1.jpg",
+      "https://example.com/highlander-photo2.jpg"
+    ]
+  },
+  {
+    "name": "BMW 3 Series",
+    "brand": "BMW",
+    "description": "The BMW 3 Series is a compact executive car known for its sporty performance, luxurious interior, and advanced technology features. It offers a dynamic driving experience, elegant design, and a range of engine options.",
+    "price": 41000,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/bmw-3-series-photo1.jpg",
+      "https://example.com/bmw-3-series-photo2.jpg"
+    ]
+  },
+  {
+    "name": "BMW 5 Series",
+    "brand": "BMW",
+    "description": "The BMW 5 Series is a mid-size luxury sedan renowned for its comfort, refinement, and cutting-edge technology. It offers a spacious and well-appointed interior, powerful engine options, and a smooth ride.",
+    "price": 54500,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/bmw-5-series-photo1.jpg",
+      "https://example.com/bmw-5-series-photo2.jpg"
+    ]
+  },
+  {
+    "name": "BMW X3",
+    "brand": "BMW",
+    "description": "The BMW X3 is a compact luxury SUV known for its athletic performance, upscale interior, and advanced safety features. It offers a spacious cabin, strong engine lineup, and agile handling.",
+    "price": 43000,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/bmw-x3-photo1.jpg",
+      "https://example.com/bmw-x3-photo2.jpg"
+    ]
+  },
+  {
+    "name": "BMW X5",
+    "brand": "BMW",
+    "description": "The BMW X5 is a mid-size luxury SUV renowned for its powerful performance, refined interior, and impressive towing capacity. It offers a comfortable and upscale cabin, advanced technology features, and versatile cargo space.",
+    "price": 59600,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/bmw-x5-photo1.jpg",
+      "https://example.com/bmw-x5-photo2.jpg"
+    ]
+  },
+  {
+    "name": "BMW 7 Series",
+    "brand": "BMW",
+    "description": "The BMW 7 Series is a full-size luxury sedan known for its opulent interior, smooth ride, and advanced technology features. It offers spacious and comfortable seating, powerful engine options, and a host of driver assistance systems.",
+    "price": 87000,
+    "category": "Automobile",
+    "photos": [
+      "https://example.com/bmw-7-series-photo1.jpg",
+      "https://example.com/bmw-7-series-photo2.jpg"
+    ]
+  },
+  {
+    "name": "MacBook Air",
+    "brand": "Apple",
+    "description": "The MacBook Air is Apple's ultra-thin and lightweight laptop, known for its sleek design, vibrant Retina display, and all-day battery life. It features the latest Apple M1 chip, fast SSD storage, and a Magic Keyboard.",
+    "price": 999.00,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/macbook-air-photo1.jpg",
+      "https://example.com/macbook-air-photo2.jpg"
+    ]
+  },
+  {
+    "name": "MacBook Pro 13-inch",
+    "brand": "Apple",
+    "description": "The MacBook Pro 13-inch is a powerful and versatile laptop designed for professionals. It features the Apple M1 Pro or M1 Max chip, a stunning Liquid Retina XDR display, and up to 64GB of unified memory.",
+    "price": 1299.00,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/macbook-pro-13-photo1.jpg",
+      "https://example.com/macbook-pro-13-photo2.jpg"
+    ]
+  },
+  {
+    "name": "MacBook Pro 14-inch",
+    "brand": "Apple",
+    "description": "The MacBook Pro 14-inch is Apple's flagship professional laptop, featuring the powerful Apple M1 Pro or M1 Max chip, a stunning mini-LED display with ProMotion technology, and an improved thermal design.",
+    "price": 1899.00,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/macbook-pro-14-photo1.jpg",
+      "https://example.com/macbook-pro-14-photo2.jpg"
+    ]
+  },
+  {
+    "name": "MacBook Pro 16-inch",
+    "brand": "Apple",
+    "description": "The MacBook Pro 16-inch is a powerhouse laptop built for demanding tasks. It features the Apple M1 Pro or M1 Max chip, a stunning Retina display with True Tone technology, and an advanced thermal architecture.",
+    "price": 2399.00,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/macbook-pro-16-photo1.jpg",
+      "https://example.com/macbook-pro-16-photo2.jpg"
+    ]
+  },
+  {
+    "name": "MacBook",
+    "brand": "Apple",
+    "description": "The MacBook is Apple's lightweight and portable laptop, ideal for everyday computing tasks. It features a sleek design, Retina display, and the latest Apple M1 chip for enhanced performance and efficiency.",
+    "price": 1299.00,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/macbook-photo1.jpg",
+      "https://example.com/macbook-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Asus ZenBook 14",
+    "brand": "Asus",
+    "description": "The Asus ZenBook 14 is a sleek and powerful laptop designed for productivity and creativity. It features a compact 14-inch NanoEdge display, Intel Core i7 processor, and a lightweight aluminum chassis.",
+    "price": 1099.99,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/zenbook-14-photo1.jpg",
+      "https://example.com/zenbook-14-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Asus ROG Zephyrus G14",
+    "brand": "Asus",
+    "description": "The Asus ROG Zephyrus G14 is a high-performance gaming laptop featuring an AMD Ryzen 9 processor, NVIDIA GeForce RTX graphics, and a compact 14-inch display with a 120Hz refresh rate.",
+    "price": 1499.99,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/rog-zephyrus-g14-photo1.jpg",
+      "https://example.com/rog-zephyrus-g14-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Asus VivoBook S15",
+    "brand": "Asus",
+    "description": "The Asus VivoBook S15 is a stylish and affordable laptop designed for everyday computing. It features a 15.6-inch NanoEdge display, Intel Core i5 processor, and a slim and lightweight design.",
+    "price": 699.99,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/vivobook-s15-photo1.jpg",
+      "https://example.com/vivobook-s15-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Asus TUF Gaming A15",
+    "brand": "Asus",
+    "description": "The Asus TUF Gaming A15 is a durable and powerful gaming laptop designed for immersive gaming experiences. It features an AMD Ryzen 7 processor, NVIDIA GeForce GTX graphics, and a high-refresh-rate display.",
+    "price": 999.99,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/tuf-gaming-a15-photo1.jpg",
+      "https://example.com/tuf-gaming-a15-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Asus Chromebook Flip C434",
+    "brand": "Asus",
+    "description": "The Asus Chromebook Flip C434 is a versatile 2-in-1 laptop perfect for work and play. It features a 14-inch NanoEdge display, Intel Core m3 processor, and a 360-degree hinge for multiple usage modes.",
+    "price": 569.99,
+    "category": "Laptop",
+    "photos": [
+      "https://example.com/chromebook-flip-c434-photo1.jpg",
+      "https://example.com/chromebook-flip-c434-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Apple AirPods Pro",
+    "brand": "Apple",
+    "description": "The Apple AirPods Pro are premium wireless earbuds featuring active noise cancellation, transparency mode, and customizable fit. They offer immersive sound, easy setup with Apple devices, and water and sweat resistance.",
+    "price": 249.00,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/airpods-pro-photo1.jpg",
+      "https://example.com/airpods-pro-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Sony WF-1000XM4",
+    "brand": "Sony",
+    "description": "The Sony WF-1000XM4 are high-end wireless earbuds with industry-leading noise cancellation, Hi-Res audio, and a comfortable and secure fit. They feature adaptive sound control, long battery life, and support for LDAC.",
+    "price": 279.99,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/wf-1000xm4-photo1.jpg",
+      "https://example.com/wf-1000xm4-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Samsung Galaxy Buds Pro",
+    "brand": "Samsung",
+    "description": "The Samsung Galaxy Buds Pro are premium true wireless earbuds with active noise cancellation, water resistance, and customizable touch controls. They feature AKG-tuned sound, long battery life, and seamless integration with Samsung devices.",
+    "price": 199.99,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/galaxy-buds-pro-photo1.jpg",
+      "https://example.com/galaxy-buds-pro-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Bose QuietComfort Earbuds",
+    "brand": "Bose",
+    "description": "The Bose QuietComfort Earbuds are premium true wireless earbuds with world-class noise cancellation, secure fit, and sweat and weather resistance. They offer clear and balanced sound, intuitive touch controls, and long battery life.",
+    "price": 279.00,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/quietcomfort-earbuds-photo1.jpg",
+      "https://example.com/quietcomfort-earbuds-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Jabra Elite 85t",
+    "brand": "Jabra",
+    "description": "The Jabra Elite 85t are premium true wireless earbuds with adjustable active noise cancellation, customizable sound, and a comfortable fit. They feature 12mm speakers, advanced call technology, and long-lasting battery life.",
+    "price": 229.99,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/elite-85t-photo1.jpg",
+      "https://example.com/elite-85t-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Anker Soundcore Liberty Air 2 Pro",
+    "brand": "Anker",
+    "description": "The Anker Soundcore Liberty Air 2 Pro are feature-packed true wireless earbuds with targeted active noise cancellation, customizable EQ, and wireless charging. They offer clear sound, comfortable fit, and long battery life.",
+    "price": 129.99,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/liberty-air-2-pro-photo1.jpg",
+      "https://example.com/liberty-air-2-pro-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Sennheiser Momentum True Wireless 2",
+    "brand": "Sennheiser",
+    "description": "The Sennheiser Momentum True Wireless 2 are premium true wireless earbuds with active noise cancellation, transparent hearing mode, and exceptional sound quality. They feature touch controls, customizable touchpad controls, and long battery life.",
+    "price": 299.95,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/momentum-true-wireless-2-photo1.jpg",
+      "https://example.com/momentum-true-wireless-2-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Beats Studio Buds",
+    "brand": "Beats",
+    "description": "The Beats Studio Buds are stylish true wireless earbuds with active noise cancellation, transparency mode, and IPX4 water and sweat resistance. They offer balanced sound, comfortable fit, and seamless integration with Apple devices.",
+    "price": 149.99,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/studio-buds-photo1.jpg",
+      "https://example.com/studio-buds-photo2.jpg"
+    ]
+  },
+  {
+    "name": "OnePlus Buds Pro",
+    "brand": "OnePlus",
+    "description": "The OnePlus Buds Pro are premium true wireless earbuds with adaptive active noise cancellation, immersive sound, and low-latency gaming mode. They feature fast charging, long battery life, and customizable touch controls.",
+    "price": 149.00,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/buds-pro-photo1.jpg",
+      "https://example.com/buds-pro-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Google Pixel Buds A-Series",
+    "brand": "Google",
+    "description": "The Google Pixel Buds A-Series are affordable true wireless earbuds with rich sound, passive noise reduction, and hands-free Google Assistant. They feature comfortable fit, sweat and water resistance, and touch controls.",
+    "price": 99.00,
+    "category": "Earbuds",
+    "photos": [
+      "https://example.com/pixel-buds-a-series-photo1.jpg",
+      "https://example.com/pixel-buds-a-series-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Epson EcoTank L6270 A4 Wi-Fi All-in-One Ink Tank Printer with ADF",
+    "brand": "Epson",
+    "description": "The Epson OfficeJet Pro 9015e is an all-in-one printer designed for small businesses and home offices. It offers fast printing speeds, automatic two-sided printing, and mobile printing capabilities.",
+    "price": 229.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://www.startech.com.bd/image/cache/catalog/printer/epson/ecotank-l6270/ecotank-l6270-01-228x228.webp"
+    ]
+  },
+  {
+    "name": "Logitech MX Master 3 Wireless Mouse",
+    "brand": "Logitech",
+    "description": "The Logitech MX Master 3 is a premium wireless mouse designed for productivity and comfort. It features advanced tracking, customizable buttons, and ergonomic design.",
+    "price": 99.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/mx-master-3-photo1.jpg",
+      "https://example.com/mx-master-3-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Steelcase Gesture Office Chair",
+    "brand": "Steelcase",
+    "description": "The Steelcase Gesture is an ergonomic office chair designed for long hours of comfortable seating. It features adjustable lumbar support, 4D armrests, and a flexible backrest.",
+    "price": 1031.00,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/gesture-office-chair-photo1.jpg",
+      "https://example.com/gesture-office-chair-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Dell UltraSharp U2720Q 27-inch Monitor",
+    "brand": "Dell",
+    "description": "The Dell UltraSharp U2720Q is a professional-grade monitor ideal for office use and creative professionals. It features a 27-inch 4K display, USB-C connectivity, and color accuracy.",
+    "price": 599.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/ultrasharp-u2720q-photo1.jpg",
+      "https://example.com/ultrasharp-u2720q-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Microsoft Surface Ergonomic Keyboard",
+    "brand": "Microsoft",
+    "description": "The Microsoft Surface Ergonomic Keyboard is designed for comfortable and efficient typing. It features a split keyset design, cushioned palm rest, and customizable shortcut keys.",
+    "price": 129.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/surface-ergonomic-keyboard-photo1.jpg",
+      "https://example.com/surface-ergonomic-keyboard-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Canon imageFORMULA DR-C225 II Document Scanner",
+    "brand": "Canon",
+    "description": "The Canon imageFORMULA DR-C225 II is a compact document scanner ideal for offices and small businesses. It offers fast scanning speeds, automatic document feeder, and reliable performance.",
+    "price": 399.00,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/imageformula-dr-c225ii-photo1.jpg",
+      "https://example.com/imageformula-dr-c225ii-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Brother P-touch PTD210 Label Maker",
+    "brand": "Brother",
+    "description": "The Brother P-touch PTD210 is a versatile label maker suitable for home and office use. It features easy-to-use keyboard, one-touch keys, and a variety of font styles and symbols.",
+    "price": 34.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/ptouch-ptd210-photo1.jpg",
+      "https://example.com/ptouch-ptd210-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Fellowes Powershred 79Ci Shredder",
+    "brand": "Fellowes",
+    "description": "The Fellowes Powershred 79Ci is a reliable shredder for home and office use. It features cross-cut shredding, advanced safety features, and a 16-sheet capacity.",
+    "price": 239.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/powershred-79ci-photo1.jpg",
+      "https://example.com/powershred-79ci-photo2.jpg"
+    ]
+  },
+  {
+    "name": "AmazonBasics 6-Sheet Cross-Cut Paper Shredder",
+    "brand": "AmazonBasics",
+    "description": "The AmazonBasics 6-Sheet Cross-Cut Paper Shredder is a compact and affordable option for light shredding tasks. It features cross-cut shredding, thermal protection, and auto start and manual reverse.",
+    "price": 34.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/amazonbasics-paper-shredder-photo1.jpg",
+      "https://example.com/amazonbasics-paper-shredder-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Avery White File Folder Labels",
+    "brand": "Avery",
+    "description": "The Avery White File Folder Labels are perfect for organizing files and documents in the office. They feature permanent adhesive, easy peel design, and compatibility with laser and inkjet printers.",
+    "price": 6.99,
+    "category": "Office Equipment",
+    "photos": [
+      "https://example.com/avery-file-folder-labels-photo1.jpg",
+      "https://example.com/avery-file-folder-labels-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Nike Men's Dri-FIT Cotton T-Shirt",
+    "brand": "Nike",
+    "description": "The Nike Men's Dri-FIT Cotton T-Shirt is designed for comfort and performance. It features moisture-wicking Dri-FIT technology to keep you dry and comfortable during workouts.",
+    "price": 25.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/nike-dri-fit-tshirt-photo1.jpg",
+      "https://example.com/nike-dri-fit-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Adidas Men's Badge of Sport T-Shirt",
+    "brand": "Adidas",
+    "description": "The Adidas Men's Badge of Sport T-Shirt is made for everyday wear. It features a classic Adidas logo on the chest and soft cotton fabric for comfort.",
+    "price": 19.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/adidas-badge-of-sport-tshirt-photo1.jpg",
+      "https://example.com/adidas-badge-of-sport-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Under Armour Men's Tech 2.0 Short Sleeve T-Shirt",
+    "brand": "Under Armour",
+    "description": "The Under Armour Men's Tech 2.0 Short Sleeve T-Shirt is designed for workouts and training sessions. It features UA Tech fabric for quick-drying and ultra-soft comfort.",
+    "price": 24.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/under-armour-tech-tshirt-photo1.jpg",
+      "https://example.com/under-armour-tech-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Hanes Men's ComfortSoft Short Sleeve T-Shirt",
+    "brand": "Hanes",
+    "description": "The Hanes Men's ComfortSoft Short Sleeve T-Shirt is a wardrobe staple. It features Hanes ComfortSoft fabric for superior softness and tag-free neck label for itch-free comfort.",
+    "price": 9.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/hanes-comfortsoft-tshirt-photo1.jpg",
+      "https://example.com/hanes-comfortsoft-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Fruit of the Loom Men's Crew Neck T-Shirt",
+    "brand": "Fruit of the Loom",
+    "description": "The Fruit of the Loom Men's Crew Neck T-Shirt offers comfort and durability. It features a classic crew neckline and cotton fabric for all-day wear.",
+    "price": 12.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/fruit-of-the-loom-tshirt-photo1.jpg",
+      "https://example.com/fruit-of-the-loom-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "American Apparel Unisex Fine Jersey T-Shirt",
+    "brand": "American Apparel",
+    "description": "The American Apparel Unisex Fine Jersey T-Shirt offers a stylish and comfortable fit for both men and women. It features fine jersey fabric and a slim fit design.",
+    "price": 15.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/american-apparel-tshirt-photo1.jpg",
+      "https://example.com/american-apparel-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Champion Men's Classic Jersey T-Shirt",
+    "brand": "Champion",
+    "description": "The Champion Men's Classic Jersey T-Shirt is a timeless classic. It features heavyweight cotton fabric and a classic Champion logo on the sleeve.",
+    "price": 17.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/champion-jersey-tshirt-photo1.jpg",
+      "https://example.com/champion-jersey-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Puma Men's Essential Logo T-Shirt",
+    "brand": "Puma",
+    "description": "The Puma Men's Essential Logo T-Shirt offers athletic style and comfort. It features a bold Puma logo on the chest and soft cotton fabric.",
+    "price": 22.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/puma-logo-tshirt-photo1.jpg",
+      "https://example.com/puma-logo-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Gap Men's Vintage Wash Pocket T-Shirt",
+    "brand": "Gap",
+    "description": "The Gap Men's Vintage Wash Pocket T-Shirt offers casual style and comfort. It features a vintage wash finish and a convenient chest pocket.",
+    "price": 29.99,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/gap-vintage-wash-tshirt-photo1.jpg",
+      "https://example.com/gap-vintage-wash-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Uniqlo Men's Supima Cotton Crewneck T-Shirt",
+    "brand": "Uniqlo",
+    "description": "The Uniqlo Men's Supima Cotton Crewneck T-Shirt offers exceptional softness and comfort. It features premium Supima cotton fabric and a classic crew neckline.",
+    "price": 14.90,
+    "category": "T-Shirt",
+    "photos": [
+      "https://example.com/uniqlo-supima-tshirt-photo1.jpg",
+      "https://example.com/uniqlo-supima-tshirt-photo2.jpg"
+    ]
+  },
+  {
+    "name": "IKEA PAX Wardrobe",
+    "brand": "IKEA",
+    "description": "The IKEA PAX Wardrobe is a versatile and customizable wardrobe solution. It features customizable interiors, sliding doors, and a variety of finishes to suit any decor.",
+    "price": 399.00,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/ikea-pax-wardrobe-photo1.jpg",
+      "https://example.com/ikea-pax-wardrobe-photo2.jpg"
+    ]
+  },
+  {
+    "name": "HOMCOM Freestanding Wardrobe",
+    "brand": "HOMCOM",
+    "description": "The HOMCOM Freestanding Wardrobe offers ample storage space for clothes and accessories. It features multiple shelves, drawers, and a hanging rod for organization.",
+    "price": 189.99,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/homcom-wardrobe-photo1.jpg",
+      "https://example.com/homcom-wardrobe-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Tvilum Space Wardrobe",
+    "brand": "Tvilum",
+    "description": "The Tvilum Space Wardrobe is a modern and space-saving wardrobe solution. It features a compact design, mirrored doors, and adjustable shelves for customization.",
+    "price": 259.99,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/tvilum-space-wardrobe-photo1.jpg",
+      "https://example.com/tvilum-space-wardrobe-photo2.jpg"
+    ]
+  },
+  {
+    "name": "South Shore Wardrobe Armoire",
+    "brand": "South Shore",
+    "description": "The South Shore Wardrobe Armoire offers classic style and functionality. It features multiple storage compartments, adjustable shelves, and a durable construction.",
+    "price": 329.00,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/south-shore-wardrobe-photo1.jpg",
+      "https://example.com/south-shore-wardrobe-photo2.jpg"
+    ]
+  },
+  {
+    "name": "LANGRIA Freestanding Closet Organizer",
+    "brand": "LANGRIA",
+    "description": "The LANGRIA Freestanding Closet Organizer is a versatile storage solution for any room. It features a sturdy metal frame, fabric shelves, and a hanging rod for clothes.",
+    "price": 69.99,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/langria-closet-organizer-photo1.jpg",
+      "https://example.com/langria-closet-organizer-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Homebi Portable Wardrobe Closet",
+    "brand": "Homebi",
+    "description": "The Homebi Portable Wardrobe Closet offers convenient storage for clothes and shoes. It features a fabric cover, steel frame, and multiple storage compartments.",
+    "price": 45.99,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/homebi-portable-wardrobe-photo1.jpg",
+      "https://example.com/homebi-portable-wardrobe-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Novogratz Crescent Wardrobe",
+    "brand": "Novogratz",
+    "description": "The Novogratz Crescent Wardrobe adds a touch of modern style to any room. It features a unique crescent-shaped design, spacious storage compartments, and sleek metal legs.",
+    "price": 279.99,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/novogratz-wardrobe-photo1.jpg",
+      "https://example.com/novogratz-wardrobe-photo2.jpg"
+    ]
+  },
+  {
+    "name": "SONGMICS Portable Wardrobe",
+    "brand": "SONGMICS",
+    "description": "The SONGMICS Portable Wardrobe offers versatile storage for clothes and accessories. It features a fabric cover, sturdy metal frame, and multiple shelves and compartments.",
+    "price": 58.99,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/songmics-portable-wardrobe-photo1.jpg",
+      "https://example.com/songmics-portable-wardrobe-photo2.jpg"
+    ]
+  },
+  {
+    "name": "AmazonBasics Wardrobe Closet",
+    "brand": "AmazonBasics",
+    "description": "The AmazonBasics Wardrobe Closet is a simple and practical storage solution. It features a fabric cover, steel frame, and easy-to-assemble design.",
+    "price": 38.99,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/amazonbasics-wardrobe-closet-photo1.jpg",
+      "https://example.com/amazonbasics-wardrobe-closet-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Prepac Elite Wardrobe Cabinet",
+    "brand": "Prepac",
+    "description": "The Prepac Elite Wardrobe Cabinet offers ample storage space for clothes and accessories. It features adjustable shelves, a hanging rod, and a durable laminate finish.",
+    "price": 244.00,
+    "category": "Wardrobe",
+    "photos": [
+      "https://example.com/prepac-wardrobe-cabinet-photo1.jpg",
+      "https://example.com/prepac-wardrobe-cabinet-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 32-Inch LED TV",
+    "brand": "Singer",
+    "description": "The Singer 32-Inch LED TV offers crisp and clear picture quality. It features a sleek design, vibrant colors, and multiple connectivity options.",
+    "price": 199.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-32-inch-led-tv-photo1.jpg",
+      "https://example.com/singer-32-inch-led-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 43-Inch 4K UHD TV",
+    "brand": "Singer",
+    "description": "The Singer 43-Inch 4K UHD TV delivers stunning visuals with four times the resolution of Full HD. It features HDR support, Dolby Audio, and smart TV functionality.",
+    "price": 399.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-43-inch-4k-uhd-tv-photo1.jpg",
+      "https://example.com/singer-43-inch-4k-uhd-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 55-Inch QLED TV",
+    "brand": "Singer",
+    "description": "The Singer 55-Inch QLED TV offers an immersive viewing experience with Quantum Dot technology. It features ultra-slim design, Quantum HDR, and built-in voice control.",
+    "price": 899.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-55-inch-qled-tv-photo1.jpg",
+      "https://example.com/singer-55-inch-qled-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 65-Inch OLED TV",
+    "brand": "Singer",
+    "description": "The Singer 65-Inch OLED TV delivers deep blacks and vibrant colors with OLED technology. It features Dolby Vision, Dolby Atmos, and smart TV functionality.",
+    "price": 1499.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-65-inch-oled-tv-photo1.jpg",
+      "https://example.com/singer-65-inch-oled-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 75-Inch 8K QLED TV",
+    "brand": "Singer",
+    "description": "The Singer 75-Inch 8K QLED TV offers lifelike picture quality with 8K resolution. It features Quantum Processor, Object Tracking Sound, and Ambient Mode+.",
+    "price": 2999.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-75-inch-8k-qled-tv-photo1.jpg",
+      "https://example.com/singer-75-inch-8k-qled-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 40-Inch Full HD TV",
+    "brand": "Singer",
+    "description": "The Singer 40-Inch Full HD TV offers great value with Full HD resolution. It features wide viewing angles, built-in speakers, and multiple HDMI inputs.",
+    "price": 299.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-40-inch-full-hd-tv-photo1.jpg",
+      "https://example.com/singer-40-inch-full-hd-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 50-Inch 4K Smart TV",
+    "brand": "Singer",
+    "description": "The Singer 50-Inch 4K Smart TV combines affordability with smart features. It features built-in Wi-Fi, streaming apps, and a user-friendly interface.",
+    "price": 499.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-50-inch-4k-smart-tv-photo1.jpg",
+      "https://example.com/singer-50-inch-4k-smart-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 60-Inch QLED Gaming TV",
+    "brand": "Singer",
+    "description": "The Singer 60-Inch QLED Gaming TV is designed for immersive gaming experiences. It features low input lag, high refresh rate, and Auto Game Mode.",
+    "price": 1499.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-60-inch-qled-gaming-tv-photo1.jpg",
+      "https://example.com/singer-60-inch-qled-gaming-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 70-Inch 4K HDR TV",
+    "brand": "Singer",
+    "description": "The Singer 70-Inch 4K HDR TV offers a cinematic viewing experience with HDR support. It features built-in Chromecast, voice control, and a slim design.",
+    "price": 1999.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-70-inch-4k-hdr-tv-photo1.jpg",
+      "https://example.com/singer-70-inch-4k-hdr-tv-photo2.jpg"
+    ]
+  },
+  {
+    "name": "Singer 85-Inch 8K QLED Smart TV",
+    "brand": "Singer",
+    "description": "The Singer 85-Inch 8K QLED Smart TV offers an unparalleled viewing experience with 8K resolution. It features Quantum HDR 32X, SmartThings integration, and OneRemote control.",
+    "price": 4999.99,
+    "category": "TV",
+    "photos": [
+      "https://example.com/singer-85-inch-8k-qled-smart-tv-photo1.jpg",
+      "https://example.com/singer-85-inch-8k-qled-smart-tv-photo2.jpg"
+    ]
   }
 ]

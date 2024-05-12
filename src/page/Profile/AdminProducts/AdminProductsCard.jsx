@@ -13,13 +13,13 @@ const AdminProductsCard = ({ product, handleRemove }) => {
 
                 <div className="card-body p-4">
                     <img src={photos} alt={name} className="w-full" />
-                    <h2 className="card_title text-center text-xl font-medium rounded p-2">
+                    <h2 className="card_title text-center text-sm font-medium rounded p-2">
                         {name}
                     </h2>
-                    <h2 className="card_title text-center text-xl font-medium rounded p-2">
+                    {/* <h2 className="card_title text-center text-sm font-medium rounded p-2">
                         {brand}
-                    </h2>
-                    <h2 className="card_title text-center text-xl font-medium rounded p-2">
+                    </h2> */}
+                    <h2 className="card_title text-center text-sm font-medium rounded p-2">
                         {price}$
                     </h2>
 
@@ -29,7 +29,7 @@ const AdminProductsCard = ({ product, handleRemove }) => {
                             <button className="btn bg-orange-600 hover:bg-orange-600 normal-case text-lg font-semibold text-[#fff]">Update</button>
                         </Link>
 
-                        <button onClick={() => handleRemove(_id)} className="btn bg-red-600 hover:bg-yellow-600 normal-case text-lg font-semibold text-[#fff]">Remove Product</button>
+                        <button onClick={() => handleRemove(_id)} className="btn bg-red-600 hover:bg-yellow-600 normal-case text-lg font-semibold text-[#fff]">Remove</button>
 
                     </div>
                 </div>
