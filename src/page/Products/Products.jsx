@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-solid-svg-icons';
 import { FaRegListAlt } from 'react-icons/fa';
 import useFilteredProduct from '../../hooks/useFilterProduct';
 import ProductsCard from './ProductsCard';
+import Pagination from '../../Pagination/Pagination';
 
 const Products = () => {
     const { selectedCategory, handleCategoryChange, filteredProduct } = useFilteredProduct();
     const [isHoveredList, setIsHoveredList] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const productPerPage = 12;
+
 
     const handleMouseEnterList = () => {
         setIsHoveredList(true);
@@ -53,6 +57,19 @@ const Products = () => {
         </ul>
     );
 
+    const indexOfLastProduct = currentPage * productPerPage;
+    const indexOfFastProduct = indexOfLastProduct - productPerPage;
+    const displayProduct = filteredProduct.slice(indexOfFastProduct, indexOfLastProduct);
+
+    const handlePageChange = (newPage) => {
+        if (newPage <= Math.ceil(filteredProduct.length / productPerPage) && newPage >= 1) {
+            setCurrentPage(newPage);
+        } else {
+            setCurrentPage(1); // Return to the first page if the newPage is out of range
+        }
+    };
+    
+
     return (
         <div>
             <h1 className="text-3xl text-red-700 font-bold text-center pt-12" data-aos="fade-up">
@@ -64,7 +81,7 @@ const Products = () => {
             {filteredProduct.length > 0 ? (
                 <div className="Allserv flex justify-around py-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {filteredProduct.map((product) => (
+                        {displayProduct.map((product) => (
                             <ProductsCard key={product._id} product={product} />
                         ))}
                     </div>
@@ -72,6 +89,13 @@ const Products = () => {
             ) : (
                 <p className="text-center h-screen flex flex-col justify-center items-center">No Data found</p>
             )}
+
+            <Pagination
+                totalProduct={filteredProduct.length}
+                productPerPage={productPerPage}
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+            />
         </div>
     );
 };
