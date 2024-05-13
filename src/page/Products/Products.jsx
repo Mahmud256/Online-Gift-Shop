@@ -21,7 +21,7 @@ const Products = () => {
         <ul className="flex text-lg justify-center space-x-4 my-4">
             <li>
                 <div
-                    className={`flex items-center text-gray-700`}
+                    className={`flex items-center w-56 p-2 border-4 border-red-700 rounded-md shadow-sm`}
                     onMouseEnter={handleMouseEnterList}
                     onMouseLeave={handleMouseLeaveList}
                 >
@@ -33,21 +33,21 @@ const Products = () => {
                         )}
                     </span>
                     <select
-                    id="categorySelect"
-                    value={selectedCategory}
-                    onChange={handleCategoryChange}
-                    className="w-40 p-2 border rounded-md shadow-sm focus:ring focus:ring-indigo-300 focus:outline-none text-gray-700"
-                >
-                    <option value="all">All</option>
-                    <option value="Smartphone">Smartphone</option>
-                    <option value="Automobile">Automobile</option>
-                    <option value="Laptop">Laptop</option>
-                    <option value="Earbuds">Earbuds</option>
-                    <option value="Office Equipment">Office Equipment</option>
-                    <option value="T-Shirt">T-Shirt</option>
-                    <option value="Wardrobe">Wardrobe</option>
-                    <option value="TV">TV</option>
-                </select>
+                        id="categorySelect"
+                        value={selectedCategory}
+                        onChange={handleCategoryChange}
+                        className="focus:outline-none text-gray-700 hover:font-bold"
+                    >
+                        <option value="all">Select Category</option>
+                        <option value="Smartphone">Smartphone</option>
+                        <option value="Automobile">Automobile</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Earbuds">Earbuds</option>
+                        <option value="Office Equipment">Office Equipment</option>
+                        <option value="T-Shirt">T-Shirt</option>
+                        <option value="Wardrobe">Wardrobe</option>
+                        <option value="TV">TV</option>
+                    </select>
                 </div>
             </li>
         </ul>
@@ -59,11 +59,7 @@ const Products = () => {
                 Our Products
             </h1>
             <div className="text-center mt-4 flex flex-col items-center">
-                <label htmlFor="categorySelect" className="block text-gray-700 text-sm font-bold mb-2">
-                    Select Category:
-                </label>
                 {navlink}
-                
             </div>
             {filteredProduct.length > 0 ? (
                 <div className="Allserv flex justify-around py-12">
