@@ -10,7 +10,7 @@ const Products = () => {
     const { selectedCategory, handleCategoryChange, filteredProduct } = useFilteredProduct();
     const [isHoveredList, setIsHoveredList] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const productPerPage = 12;
+    const productPerPage = 8;
 
 
     const handleMouseEnterList = () => {
@@ -43,14 +43,14 @@ const Products = () => {
                         className="focus:outline-none text-gray-700 hover:font-bold"
                     >
                         <option value="all">Select Category</option>
-                        <option value="Smartphone">Smartphone</option>
-                        <option value="Automobile">Automobile</option>
-                        <option value="Laptop">Laptop</option>
-                        <option value="Earbuds">Earbuds</option>
-                        <option value="Office Equipment">Office Equipment</option>
-                        <option value="T-Shirt">T-Shirt</option>
-                        <option value="Wardrobe">Wardrobe</option>
-                        <option value="TV">TV</option>
+                        <option value="smartphone">Smartphone</option>
+                        <option value="automobile">Automobile</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="earbuds">Earbuds</option>
+                        <option value="office equipment">Office Equipment</option>
+                        <option value="t-shirt">T-Shirt</option>
+                        <option value="wardrobe">Wardrobe</option>
+                        <option value="tv">TV</option>
                     </select>
                 </div>
             </li>

@@ -44,7 +44,7 @@ const AdminProduct = () => {
         });
     }
 
-   
+
 
     return (
         <div>
@@ -59,15 +59,15 @@ const AdminProduct = () => {
                     onChange={handleCategoryChange}
                     className="w-40 p-2 border rounded-md shadow-sm focus:ring focus:ring-indigo-300 focus:outline-none text-gray-700"
                 >
-                    <option value="all">All</option>
-                    <option value="Smartphone">Smartphone</option>
-                    <option value="Automobile">Automobile</option>
-                    <option value="Laptop">Laptop</option>
-                    <option value="Earbuds">Earbuds</option>
-                    <option value="Office Equipment">Office Equipment</option>
-                    <option value="T-Shirt">T-Shirt</option>
-                    <option value="Wardrobe">Wardrobe</option>
-                    <option value="TV">TV</option>
+                    <option value="all">Select Category</option>
+                    <option value="smartphone">Smartphone</option>
+                    <option value="automobile">Automobile</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="earbuds">Earbuds</option>
+                    <option value="office equipment">Office Equipment</option>
+                    <option value="t-shirt">T-Shirt</option>
+                    <option value="wardrobe">Wardrobe</option>
+                    <option value="tv">TV</option>
                 </select>
             </div>
             {filteredProduct.length > 0 ?
