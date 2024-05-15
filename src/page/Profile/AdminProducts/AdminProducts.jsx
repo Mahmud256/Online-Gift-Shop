@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import Swal from 'sweetalert2';
 import useProduct from '../../../hooks/useProduct';
 import AdminProductsCard from './AdminProductsCard';
@@ -7,6 +6,7 @@ import useFilteredProduct from '../../../hooks/useFilterProduct';
 
 
 const AdminProduct = () => {
+    // eslint-disable-next-line no-unused-vars
     const [product, refetch] = useProduct();
 
     const axiosSecure = useAxiosSecure();

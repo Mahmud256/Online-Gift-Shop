@@ -43,12 +43,13 @@ const Products = () => {
                         className="focus:outline-none text-gray-700 hover:font-bold"
                     >
                         <option value="all">Select Category</option>
+                        <option value="all">All</option>
                         <option value="smartphone">Smartphone</option>
                         <option value="automobile">Automobile</option>
                         <option value="laptop">Laptop</option>
                         <option value="earbuds">Earbuds</option>
                         <option value="office equipment">Office Equipment</option>
-                        <option value="t-shirt">T-Shirt</option>
+                        <option value="t-Shirt">T-Shirt</option>
                         <option value="wardrobe">Wardrobe</option>
                         <option value="tv">TV</option>
                     </select>

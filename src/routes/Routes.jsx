@@ -14,6 +14,8 @@ import UserHome from "../page/Profile/UserHome/UserHome";
 import AddProduct from "../components/AddProduct/AddProduct";
 import AdminProducts from "../page/Profile/AdminProducts/AdminProducts";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
+import ProductDetails from "../page/Details/ProductDetails";
+import Cart from "../page/Profile/Cart/Cart";
 
 
 const router = createBrowserRouter([
@@ -42,11 +44,13 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>
+      },
+      {
+        path: '/details/:_id',
+        element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
+        loader: () => fetch(`https://online-gift-shop-server.vercel.app/product`)
       }
-      // {
-      //   path: '/updateProduct',
-      //   element: <Offer></Offer>
-      // }
+
     ]
   },
 
@@ -57,8 +61,12 @@ const router = createBrowserRouter([
       // Normal User Route
       {
         path: 'userHome',
-        element: <PrivateRoutes><UserHome></UserHome></PrivateRoutes>
+        element: <UserHome></UserHome>
       },
+      {
+        path: 'cart',
+        element: <Cart></Cart>
+    },
 
       // Admin Route
       {
@@ -76,7 +84,7 @@ const router = createBrowserRouter([
       {
         path: 'updateProduct/:id',
         element: <AdminRoute><UpdateProduct></UpdateProduct></AdminRoute>,
-        loader: ({params}) => fetch(`https://online-gift-shop-server.vercel.app/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://online-gift-shop-server.vercel.app/product/${params.id}`)
       }
     ]
   }

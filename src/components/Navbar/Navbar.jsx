@@ -122,7 +122,7 @@ const Navbar = () => {
 
           {/* Sign in and Cart */}
           <div className="flex items-center space-x-4">
-            <Link to="/offer">
+            <Link to="/profile/cart">
               <div className="text-black hover:text-gray-300"><FontAwesomeIcon icon={faShoppingCart} size="lg" /></div>
 
             </Link>

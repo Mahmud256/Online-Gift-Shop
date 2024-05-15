@@ -3,7 +3,9 @@ import React from 'react';
 const Offer = () => {
     return (
         <div>
-            <h2>Offer</h2>
+
+            <p className="text-center h-screen flex flex-col justify-center items-center">No Data found</p>
+
         </div>
     );
 };

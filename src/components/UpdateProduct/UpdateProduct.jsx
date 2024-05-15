@@ -1,23 +1,43 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useState } from "react";
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const UpdateProduct = () => {
     const axiosPublic = useAxiosPublic();
+    const [image, setImage] = useState(null);
     const product = useLoaderData();
     const { _id } = product || {};
 
     const handleUpdateProduct = event => {
         event.preventDefault();
+
+        // Upload image
+        const formData = new FormData();
+        formData.append('image', image);
+
+        axiosPublic.post(image_hosting_api, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
+
+        .then(response => {
+            const imageUrl = response.data.data.url;
+
+            // Get form data
+
         const form = event.target;
         const name = form.name.value;
         const price = form.price.value;
         const brand = form.brand.value;
         const category = form.category.value;
         const description = form.description.value;
-        const photos = form.photo.value; // corrected photos here
-
-        const updatedProduct = { name, price, brand, category, description, photos };
+  
+        const updatedProduct = { name, price, brand, category, description, photos: imageUrl };
 
         // Send data to the server
         axiosPublic.put(`product/${_id}`, updatedProduct)
@@ -33,7 +53,19 @@ const UpdateProduct = () => {
             .catch(error => {
                 console.error('Error adding product:', error);
             });
+
+        })
+
+        
+        
+        .catch(error => {
+            console.error('Error uploading image:', error);
+        });
     };
+
+    const handleImageChange = event => {
+        setImage(event.target.files[0]);
+    }
 
     return (
         <div>
@@ -45,7 +77,9 @@ const UpdateProduct = () => {
                     <form onSubmit={handleUpdateProduct}>
                         <div className="mb-4 form-control">
                             <label className="label text-gray-700 font-bold mb-2">Photo URL:</label>
-                            <input type="url" id="photo" name="photo" defaultValue={product.photos} className="w-full px-3 py-2 border rounded-lg" placeholder="Enter Photo URL" />
+                            {/* <input type="url" id="photo" name="photo" defaultValue={product.photos} className="w-full px-3 py-2 border rounded-lg" placeholder="Enter Photo URL" /> */}
+                            <input type="file" onChange={handleImageChange} className="w-full px-3 py-2 border rounded-lg" accept="image/jpeg, image/png" />
+                       
                         </div>
                         <div className='flex gap-5'>
                             <div className='w-[50%]'>

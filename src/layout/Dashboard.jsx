@@ -45,6 +45,9 @@ const Dashboard = () => {
                             <NavLink to="/profile/userHome">
                                 User Profile
                             </NavLink>
+                            <NavLink to="/profile/cart">
+                                Cart
+                            </NavLink>
                         </>
                     }
 
