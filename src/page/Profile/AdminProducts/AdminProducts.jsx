@@ -65,7 +65,7 @@ const AdminProduct = () => {
                     <option value="laptop">Laptop</option>
                     <option value="earbuds">Earbuds</option>
                     <option value="office equipment">Office Equipment</option>
-                    <option value="t-shirt">T-Shirt</option>
+                    <option value="t-Shirt">T-Shirt</option>
                     <option value="wardrobe">Wardrobe</option>
                     <option value="tv">TV</option>
                 </select>

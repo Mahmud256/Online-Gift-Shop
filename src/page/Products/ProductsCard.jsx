@@ -7,7 +7,7 @@ const ProductsCard = ({ product }) => {
     return (
         <div>
             <Link to={`/details/${_id}`}>
-                <div className="max-w-xs overflow-hidden hover:shadow-lg bg-white">
+                <div className="max-w-xs h-full overflow-hidden hover:shadow-lg bg-white">
                     <img src={photos} alt={name} className="w-full" />
                     <div className="px-4 py-2">
                         <h2 className="font-semibold">{name}</h2>

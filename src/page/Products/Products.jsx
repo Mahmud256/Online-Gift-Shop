@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListAlt } from '@fortawesome/free-solid-svg-icons';
 import { FaRegListAlt } from 'react-icons/fa';
@@ -10,8 +10,25 @@ const Products = () => {
     const { selectedCategory, handleCategoryChange, filteredProduct } = useFilteredProduct();
     const [isHoveredList, setIsHoveredList] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const productPerPage = 8;
+    const [productPerPage, setProductPerPage] = useState(8); // Default value
 
+    // Function to determine the product per page based on screen size
+    const determineProductPerPage = () => {
+        if (window.innerWidth <= 640) {
+            setProductPerPage(20);
+        } else {
+            setProductPerPage(8);
+        }
+    };
+
+    // useEffect hook to run the function when the component mounts and when the window size changes
+    useEffect(() => {
+        determineProductPerPage();
+        window.addEventListener('resize', determineProductPerPage);
+        return () => {
+            window.removeEventListener('resize', determineProductPerPage);
+        };
+    }, []);
 
     const handleMouseEnterList = () => {
         setIsHoveredList(true);
@@ -59,8 +76,8 @@ const Products = () => {
     );
 
     const indexOfLastProduct = currentPage * productPerPage;
-    const indexOfFastProduct = indexOfLastProduct - productPerPage;
-    const displayProduct = filteredProduct.slice(indexOfFastProduct, indexOfLastProduct);
+    const indexOfFirstProduct = indexOfLastProduct - productPerPage;
+    const displayProduct = filteredProduct.slice(indexOfFirstProduct, indexOfLastProduct);
 
     const handlePageChange = (newPage) => {
         if (newPage <= Math.ceil(filteredProduct.length / productPerPage) && newPage >= 1) {
@@ -69,7 +86,6 @@ const Products = () => {
             setCurrentPage(1); // Return to the first page if the newPage is out of range
         }
     };
-    
 
     return (
         <div>
