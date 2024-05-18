@@ -7,13 +7,25 @@ import { faShoppingCart, faHome, faListAlt, faTags } from '@fortawesome/free-sol
 import { Link, NavLink } from 'react-router-dom';
 import Logout from '../../page/Logout/Logout';
 import useAuth from '../../hooks/useAuth';
+import useCart from '../../hooks/useCart';
+import { BsCart4 } from 'react-icons/bs';
+// import useFilteredProduct from '../../hooks/useFilterProduct';
+// import ProductsCard from '../../page/Products/ProductsCard';
+// import ProductSearch from '../../page/ProductSearch/ProductSearch';
 
 const Navbar = () => {
   const { user } = useAuth();
+  const [cart] = useCart();
 
   const [isHoveredHome, setIsHoveredHome] = useState(false);
-  const [isHoveredList, setIsHoveredList] = useState(false);
+  // const [isHoveredList, setIsHoveredList] = useState(false);
   const [isHoveredOffer, setIsHoveredOffer] = useState(false);
+  const [isHoveredCart, setIsHoveredCart] = useState(false);
+
+  // const { filteredProduct } = useFilteredProduct();
+  // const [searchTerm, setSearchTerm] = useState('');
+  // const [showResults, setShowResults] = useState(false);
+
 
   const handleMouseEnterHome = () => {
     setIsHoveredHome(true);
@@ -23,13 +35,13 @@ const Navbar = () => {
     setIsHoveredHome(false);
   };
 
-  const handleMouseEnterList = () => {
-    setIsHoveredList(true);
-  };
+  // const handleMouseEnterList = () => {
+  //   setIsHoveredList(true);
+  // };
 
-  const handleMouseLeaveList = () => {
-    setIsHoveredList(false);
-  };
+  // const handleMouseLeaveList = () => {
+  //   setIsHoveredList(false);
+  // };
 
 
   const handleMouseEnterOffer = () => {
@@ -40,6 +52,21 @@ const Navbar = () => {
     setIsHoveredOffer(false);
   };
 
+  const handleMouseEnterCart = () => {
+    setIsHoveredCart(true);
+  };
+
+  const handleMouseLeaveCart = () => {
+    setIsHoveredCart(false);
+  };
+
+  // const handleSearch = (show) => {
+  //   setShowResults(show);
+  // };
+
+  // const filteredProducts = filteredProduct.filter(product =>
+  //   product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
 
   const navlink = <>
     <ul className="flex text-lg justify-center space-x-4 my-4">
@@ -61,7 +88,7 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      <li>
+      {/* <li>
         <NavLink to="/category">
           <div
             className={`flex items-center text-gray-700`}
@@ -78,7 +105,7 @@ const Navbar = () => {
             <p className='text-base font-bold m-2'>Shop By Category</p>
           </div>
         </NavLink>
-      </li>
+      </li> */}
 
       <li>
         <NavLink to="/offer">
@@ -111,20 +138,31 @@ const Navbar = () => {
             <h2 className='text-lg lg:text-5xl font-bold'>OGS</h2>
           </Link>
           {/* Search bar */}
-          <div className='max-w-[719px] w-1/2 relative'>
-            <div className="flex w-full rounded-md overflow-hidden">
-              <div className="relative flex-1">
-                <input type="text" className="block w-full p-3 pl-4 outline-none bg-[#eaefef]" placeholder="Search in OGS" />
-              </div>
-              <button className="gap-2 p-2 px-5 text-lg font-medium text-white bg-gray-700">Search</button>
-            </div>
-          </div>
+          {/* <div className='max-w-[719px] w-1/2 relative'>
+            <ProductSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} />
+          </div> */}
+
+          {navlink}
 
           {/* Sign in and Cart */}
           <div className="flex items-center space-x-4">
             <Link to="/profile/cart">
-              <div className="text-black hover:text-gray-300"><FontAwesomeIcon icon={faShoppingCart} size="lg" /></div>
-
+              {/* <div className="text-black hover:text-gray-300"><FontAwesomeIcon icon={faShoppingCart} size="lg" />{cart.length}</div> */}
+              <div
+                className={`flex items-center text-gray-700 hover:font-bold`}
+                onMouseEnter={handleMouseEnterCart}
+                onMouseLeave={handleMouseLeaveCart}
+              >
+                <span>
+                  {isHoveredCart ? (
+                    // <FontAwesomeIcon icon={faTags} size="lg" className="mr-2" />
+                    <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+                  ) : (
+                    <BsCart4 size={25} />
+                  )}
+                </span>
+                :{cart.length}
+              </div>
             </Link>
             <div className="dropdown dropdown-hover dropdown-end">
               <a tabIndex={0}><FaRegUser size={23} /></a>
@@ -143,8 +181,17 @@ const Navbar = () => {
           </div>
         </div>
         {/* Navbar links */}
-        {navlink}
       </div>
+
+      {/* {showResults && filteredProducts.length > 0 && (
+        <div className="Allserv flex justify-around py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {filteredProducts.map((product) => (
+                <ProductsCard key={product._id} product={product} />
+              ))}
+          </div>
+        </div>
+      )} */}
 
     </nav>
   );
