@@ -1,7 +1,7 @@
 import useAdmin from '../hooks/useAdmin';
 import { NavLink, Outlet } from 'react-router-dom';
 import { MdAdminPanelSettings, MdOutlineAddBusiness } from 'react-icons/md';
-import { FaHome } from 'react-icons/fa';
+import { FaHome, FaUsers } from 'react-icons/fa';
 
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
@@ -27,37 +27,44 @@ const Dashboard = () => {
                                 </NavLink>
                             </li>
 
-                            <div className="divider"></div>
                             <li>
-                                <NavLink to="/profile/addProduct">
-                                    <MdOutlineAddBusiness />
-                                    Add Product
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/profile/adminProducts">
-                                    Product
-                                </NavLink>
-                            </li>
-                        </>
-                        :
-                        <>
-                            <NavLink to="/profile/userHome">
-                                User Profile
+                                <NavLink to="/profile/users">
+                                    <FaUsers></FaUsers>
+                                    All Users
                             </NavLink>
-                            <NavLink to="/profile/cart">
-                                Cart
-                            </NavLink>
-                        </>
+                        </li>
+
+                    <div className="divider"></div>
+                    <li>
+                        <NavLink to="/profile/addProduct">
+                            <MdOutlineAddBusiness />
+                            Add Product
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/profile/adminProducts">
+                            Product
+                        </NavLink>
+                    </li>
+                </>
+                :
+                <>
+                    <NavLink to="/profile/userHome">
+                        User Profile
+                    </NavLink>
+                    <NavLink to="/profile/cart">
+                        Cart
+                    </NavLink>
+                </>
                     }
 
-                </ul>
-            </div>
-            {/* dashboard content */}
-            <div className='flex-1 p-8'>
-                <Outlet></Outlet>
-            </div>
+            </ul>
         </div>
+            {/* dashboard content */ }
+    <div className='flex-1 p-8'>
+        <Outlet></Outlet>
+    </div>
+        </div >
     );
 };
 

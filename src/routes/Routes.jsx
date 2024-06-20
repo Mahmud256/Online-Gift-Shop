@@ -16,6 +16,7 @@ import AdminProducts from "../page/Profile/AdminProducts/AdminProducts";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import ProductDetails from "../page/Details/ProductDetails";
 import Cart from "../page/Profile/Cart/Cart";
+import AllUsers from "../page/Profile/AllUsers/AllUsers";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
         path: 'adminHome',
         element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
       },
+      {
+        path: 'users',
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+    },
       {
         path: 'addProduct',
         element: <AdminRoute><AddProduct></AddProduct></AdminRoute>

@@ -51,7 +51,7 @@ const AdminProduct = () => {
             <h1 className='text-3xl text-red-700 font-bold text-center pt-12' data-aos="fade-up">Our Products</h1>
             <div className="text-center mt-4 flex flex-col items-center">
                 <label htmlFor="categorySelect" className="block text-gray-700 text-sm font-bold mb-2">
-                    Select Category:
+                    Total Products: {product.length}
                 </label>
                 <select
                     id="categorySelect"
