@@ -14,6 +14,10 @@ import UserHome from "../page/Profile/UserHome/UserHome";
 import AddProduct from "../components/AddProduct/AddProduct";
 import AdminProducts from "../page/Profile/AdminProducts/AdminProducts";
 import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
+import ProductDetails from "../page/Details/ProductDetails";
+import Cart from "../page/Profile/Cart/Cart";
+import AllUsers from "../page/Profile/AllUsers/AllUsers";
+// import Product from "../page/ProductSearch/Product";
 
 
 const router = createBrowserRouter([
@@ -35,6 +39,10 @@ const router = createBrowserRouter([
         path: "/offer",
         element: <Offer></Offer>
       },
+      // {
+      //   path:"/product",
+      //   element: <Product></Product>
+      // },
       {
         path: "/login",
         element: <Login></Login>
@@ -42,11 +50,13 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup></Signup>
+      },
+      {
+        path: '/details/:_id',
+        element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
+        loader: () => fetch(`https://online-gift-shop-server.vercel.app/product`)
       }
-      // {
-      //   path: '/updateProduct',
-      //   element: <Offer></Offer>
-      // }
+
     ]
   },
 
@@ -57,14 +67,22 @@ const router = createBrowserRouter([
       // Normal User Route
       {
         path: 'userHome',
-        element: <PrivateRoutes><UserHome></UserHome></PrivateRoutes>
+        element: <UserHome></UserHome>
       },
+      {
+        path: 'cart',
+        element: <Cart></Cart>
+    },
 
       // Admin Route
       {
         path: 'adminHome',
         element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
       },
+      {
+        path: 'users',
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+    },
       {
         path: 'addProduct',
         element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
@@ -76,7 +94,7 @@ const router = createBrowserRouter([
       {
         path: 'updateProduct/:id',
         element: <AdminRoute><UpdateProduct></UpdateProduct></AdminRoute>,
-        loader: ({params}) => fetch(`https://online-gift-shop-server.vercel.app/product/${params.id}`)
+        loader: ({ params }) => fetch(`https://online-gift-shop-server.vercel.app/product/${params.id}`)
       }
     ]
   }
