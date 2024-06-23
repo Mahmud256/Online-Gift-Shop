@@ -17,6 +17,7 @@ import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import ProductDetails from "../page/Details/ProductDetails";
 import Cart from "../page/Profile/Cart/Cart";
 import AllUsers from "../page/Profile/AllUsers/AllUsers";
+import Shipping from "../page/Profile/Shipping/Shipping";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -72,7 +73,11 @@ const router = createBrowserRouter([
       {
         path: 'cart',
         element: <Cart></Cart>
-    },
+      },
+      {
+        path:'shipping',
+        element: <Shipping></Shipping>
+      },
 
       // Admin Route
       {
@@ -82,7 +87,7 @@ const router = createBrowserRouter([
       {
         path: 'users',
         element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-    },
+      },
       {
         path: 'addProduct',
         element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
