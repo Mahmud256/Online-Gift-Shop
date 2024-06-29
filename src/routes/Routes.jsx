@@ -17,7 +17,8 @@ import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import ProductDetails from "../page/Details/ProductDetails";
 import Cart from "../page/Profile/Cart/Cart";
 import AllUsers from "../page/Profile/AllUsers/AllUsers";
-import Shipping from "../page/Profile/Shipping/Shipping";
+import AddLocation from "../page/Profile/Location/AddLocation";
+import Location from "../page/Profile/Location/Location";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -75,8 +76,12 @@ const router = createBrowserRouter([
         element: <Cart></Cart>
       },
       {
-        path:'shipping',
-        element: <Shipping></Shipping>
+        path:'location',
+        element: <AddLocation></AddLocation>
+      },
+      {
+        path:'mylocation',
+        element: <Location></Location>
       },
 
       // Admin Route

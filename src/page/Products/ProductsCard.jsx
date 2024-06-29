@@ -13,7 +13,7 @@ const ProductsCard = ({ product }) => {
                         <h2 className="font-semibold">{name}</h2>
                         {/* <h3 className="text-center text-sm text-gray-600">{brand}</h3> */}
 
-                        <h2 className="text-lg font-bold">${price}</h2>
+                        <h2 className="text-lg font-bold"><span className="text-lg font-black">৳</span> {price}</h2>
 
                     </div>
                 </div>

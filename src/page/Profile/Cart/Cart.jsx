@@ -105,7 +105,7 @@ const Cart = () => {
                                 <td>
                                     {product.name}
                                 </td>
-                                <td>${product.price}</td>
+                                <td><span className="text-base font-extrabold">৳</span> {product.price}</td>
                                 <th>
                                     <button
                                         onClick={() => handleDelete(product._id)}

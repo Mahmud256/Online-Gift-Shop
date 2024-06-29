@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { MdAdminPanelSettings, MdOutlineAddBusiness } from 'react-icons/md';
 import { FaHome, FaUsers } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faShoppingCart, faBox } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faShoppingCart, faBox, faPlus, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 
 const Dashboard = () => {
@@ -11,7 +11,7 @@ const Dashboard = () => {
     return (
         <div className='flex'>
             {/* dashboard side bar */}
-            <div className="w-64 min-h-screen bg-stone-300">
+            <div className="w-72 min-h-screen bg-stone-300">
                 <ul className="menu p-4 text-lg font-medium">
                     <li>
                         <NavLink to="/">
@@ -66,8 +66,13 @@ const Dashboard = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/profile/shipping">
-                                    <FontAwesomeIcon icon={faShoppingCart} /> Shipping Address
+                                <NavLink to="/profile/location">
+                                <FontAwesomeIcon icon={faPlus} />Add Shipping Location
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/profile/mylocation">
+                                <FontAwesomeIcon icon={faLocationDot} />My Location
                                 </NavLink>
                             </li>
 

@@ -1,13 +1,16 @@
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useAuth from "../../../hooks/useAuth";
 
-const Shipping = () => {
+const AddLocation = () => {
 
   const axiosPublic = useAxiosPublic();
+  const { user } = useAuth();
   
   const handleSubmit = event => {
     event.preventDefault();
 
+    if (user && user.email) {
     // Get form data
     const form = event.target;
     const name = form.name.value;
@@ -16,16 +19,17 @@ const Shipping = () => {
     const area = form.area.value;
     const address = form.address.value;
 
-    const newAddress = { name, phone, city, area, address };
+    const newLocation = { name, phone, city, area, address, email: user.email, };
+     
 
     // Send data to the server
-    axiosPublic.post('/shipping', newAddress)
+    axiosPublic.post('/location', newLocation)
     .then(res => {
         if (res.data.insertedId) {
             Swal.fire({
                 icon: 'success',
                 title: 'Success!',
-                text: 'Your Address added to the database',
+                text: 'Your Location added to the database',
             });
             form.reset();
         }
@@ -33,6 +37,7 @@ const Shipping = () => {
     .catch(error => {
         console.error('Error adding product:', error);
     });
+  }
   }
 
   return (
@@ -75,4 +80,4 @@ const Shipping = () => {
   );
 };
 
-export default Shipping;
+export default AddLocation;
