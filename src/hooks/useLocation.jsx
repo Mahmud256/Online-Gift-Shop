@@ -13,7 +13,7 @@ const useLocation = () => {
         }
     })
 
-    return [location]
+    return [location, refetch]
 };
 
 export default useLocation;

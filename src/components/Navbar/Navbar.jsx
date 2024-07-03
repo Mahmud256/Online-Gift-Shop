@@ -107,7 +107,7 @@ const Navbar = () => {
         </NavLink>
       </li> */}
 
-      <li>
+      {/* <li>
         <NavLink to="/offer">
           <div
             className={`flex items-center text-gray-700`}
@@ -124,7 +124,7 @@ const Navbar = () => {
             <p className='text-base font-bold m-2'>Special Offers</p>
           </div>
         </NavLink>
-      </li>
+      </li> */}
     </ul>
   </>
 

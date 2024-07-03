@@ -19,6 +19,7 @@ import Cart from "../page/Profile/Cart/Cart";
 import AllUsers from "../page/Profile/AllUsers/AllUsers";
 import AddLocation from "../page/Profile/Location/AddLocation";
 import Location from "../page/Profile/Location/Location";
+import UpdateLocation from "../page/Profile/Location/updateLocation";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -82,6 +83,11 @@ const router = createBrowserRouter([
       {
         path:'mylocation',
         element: <Location></Location>
+      },
+      {
+        path: 'updateLocation/:id',
+        element: <UpdateLocation></UpdateLocation>,
+        loader: ({ params }) => fetch(`https://online-gift-shop-server.vercel.app/location/${params.id}`)
       },
 
       // Admin Route

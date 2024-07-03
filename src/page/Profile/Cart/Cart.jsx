@@ -52,17 +52,30 @@ const Cart = () => {
         });
     }
 
+    const handlePay = (data) => {
+
+        fetch("https://online-gift-shop-server.vercel.app/payments",{
+            method: "POST",
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(data),
+        })
+        .then(res => res.json())
+        .then((result) => {
+            console.log(result);
+        })
+
+           
+    }
+
+
     return (
         <div>
             <div className="flex justify-evenly mb-8">
                 <h2 className="text-4xl">products: {cart.length}</h2>
                 <h2 className="text-4xl">Total Price: {totalPrice}</h2>
 
-                {cart.length ? <Link to="/dashboard/payment">
-                    <button className="btn btn-primary">Pay</button>
-                </Link> :
-                    <button disabled className="btn btn-primary">Pay</button>
-                }
+                <button onClick={handlePay} className="btn btn-primary">Pay</button>
+
 
             </div>
             <div className="overflow-x-auto">
@@ -105,7 +118,7 @@ const Cart = () => {
                                 <td>
                                     {product.name}
                                 </td>
-                                <td><span className="text-base font-extrabold">৳</span> {product.price}</td>
+                                <td>${product.price}</td>
                                 <th>
                                     <button
                                         onClick={() => handleDelete(product._id)}

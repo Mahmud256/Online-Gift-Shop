@@ -6,7 +6,7 @@ import useCart from "../../hooks/useCart";
 
 
 const ProductDetailsCard = ({ product }) => {
-  const { _id, name, brand, price, photos, description } = product || {};
+  const { _id, name, brand, price, category, photos, description } = product || {};
 
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -21,6 +21,9 @@ const ProductDetailsCard = ({ product }) => {
             productId: _id,
             email: user.email,
             name,
+            brand,
+            category,
+            description,
             photos,
             price
 
