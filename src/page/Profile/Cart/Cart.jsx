@@ -1,28 +1,16 @@
 import useCart from '../../../hooks/useCart';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
-
-
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const Cart = () => {
     const [cart, refetch] = useCart();
     const totalPrice = cart.reduce((total, product) => total + parseFloat(product.price), 0); // Parse price to float
-
     const axiosPublic = useAxiosPublic();
-
-    // const [quantity, setQuantity] = useState(1);
-
-    // const increaseQuantity = () => {
-    //     setQuantity(quantity + 1);
-    // };
-
-    // const decreaseQuantity = () => {
-    //     if (quantity > 1) {
-    //         setQuantity(quantity - 1);
-    //     }
-    // };
+    const axiosSecure = useAxiosSecure()
+    const {location} = useLocation();
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -35,7 +23,6 @@ const Cart = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                console.log(result);
                 axiosPublic.delete(`/cart/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
@@ -46,46 +33,45 @@ const Cart = () => {
                                 icon: "success"
                             });
                         }
-                    })
-
+                    });
             }
         });
     }
 
-    const handlePay = (data) => {
+    const handlePayment = async () => {
+        const paymentDetails = {
+            amount: totalPrice,
+            currency: 'BDT',
+            product_name: 'Your Products',
+            customer_name: 'John Doe', // Replace with dynamic customer name
+            customer_email: 'john@example.com', // Replace with dynamic customer email
+            customer_phone: '0123456789', // Replace with dynamic customer phone
+        };
 
-        fetch("https://online-gift-shop-server.vercel.app/payments",{
-            method: "POST",
-            headers: {"content-type": "application/json"},
-            body: JSON.stringify(data),
-        })
-        .then(res => res.json())
-        .then((result) => {
-            console.log(result);
-        })
-
-           
-    }
-
+      
+        try {
+            const response = await axiosSecure.post('/initiate-payment', paymentDetails);
+            const data = response.data;
+            if (data.url) {
+                window.location.href = data.url; // Redirect to the payment gateway
+            }
+        } catch (error) {
+            console.error('Error initiating payment:', error);
+        }
+    };
 
     return (
         <div>
             <div className="flex justify-evenly mb-8">
-                <h2 className="text-4xl">products: {cart.length}</h2>
+                <h2 className="text-4xl">Products: {cart.length}</h2>
                 <h2 className="text-4xl">Total Price: {totalPrice}</h2>
-
-                <button onClick={handlePay} className="btn btn-primary">Pay</button>
-
-
+                <button onClick={handlePayment} className="btn btn-primary">Pay</button>
             </div>
             <div className="overflow-x-auto">
-                <table className="table  w-full">
-                    {/* head */}
+                <table className="table w-full">
                     <thead>
                         <tr>
-                            <th>
-                                #
-                            </th>
+                            <th>#</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Price</th>
@@ -93,43 +79,27 @@ const Cart = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            cart.map((product, index) => <tr key={product._id}>
-                                <th>
-                                    {index + 1}
-                                </th>
+                        {cart.map((product, index) => (
+                            <tr key={product._id}>
+                                <th>{index + 1}</th>
                                 <td>
                                     <div className="flex products-center gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={product.photos} alt="Avatar Tailwind CSS Component" />
+                                                <img src={product.photos} alt="Product" />
                                             </div>
-
-                                            {/* Quantity Controls */}
-                                            {/* <div className="flex items-center mb-4">
-                                                <button className="px-2 py-1 bg-gray-200 text-gray-700 rounded" onClick={decreaseQuantity}>-</button>
-                                                <span className="mx-2">{quantity}</span>
-                                                <button className="px-2 py-1 bg-gray-200 text-gray-700 rounded" onClick={increaseQuantity}>+</button>
-                                            </div> */}
-
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    {product.name}
-                                </td>
+                                <td>{product.name}</td>
                                 <td>${product.price}</td>
                                 <th>
-                                    <button
-                                        onClick={() => handleDelete(product._id)}
-                                        className="btn btn-ghost btn-lg">
-                                        <FaTrashAlt className="text-red-600"></FaTrashAlt>
+                                    <button onClick={() => handleDelete(product._id)} className="btn btn-ghost btn-lg">
+                                        <FaTrashAlt className="text-red-600" />
                                     </button>
                                 </th>
-                            </tr>)
-                        }
-
-
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
