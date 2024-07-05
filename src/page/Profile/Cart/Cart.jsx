@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import useAxiosPublic from '../../../hooks/useAxiosPublic';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import useLocation from '../../../hooks/useLocation';
+import Marquee from "react-fast-marquee";
 
 const Cart = () => {
     const [cart, refetch] = useCart();
@@ -57,7 +58,7 @@ const Cart = () => {
             customer_city: location[0].city,
             customer_area: location[0].area,
             customer_address: location[0].address,
-            date: formattedDate, 
+            date: formattedDate,
 
             cart: cart.map(product => ({
                 product_name: product.name,
@@ -115,6 +116,12 @@ const Cart = () => {
                 <h2 className="text-4xl">Total Price: {totalPrice}</h2>
                 <button onClick={handlePayment} className="btn btn-primary">Pay</button>
             </div>
+            <Marquee className='text-red-600 text-2xl font-bold'>
+                If You Don't Add A Shipping Location, Your Payment Will Not Be Done!!!
+            </Marquee>
+            <Marquee className='text-green-600 text-2xl font-bold' direction="right">
+                Please Check My Location. 
+            </Marquee>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
