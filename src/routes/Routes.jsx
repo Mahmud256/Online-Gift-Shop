@@ -20,6 +20,7 @@ import AllUsers from "../page/Profile/AllUsers/AllUsers";
 import AddLocation from "../page/Profile/Location/AddLocation";
 import Location from "../page/Profile/Location/Location";
 import UpdateLocation from "../page/Profile/Location/updateLocation";
+import ManageOrder from "../page/Profile/ManageOrder/ManageOrder";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
       {
         path: 'adminProducts',
         element: <AdminRoute><AdminProducts></AdminProducts></AdminRoute>
+      },
+      {
+        path: 'manageOrder',
+        element: <AdminRoute><ManageOrder></ManageOrder></AdminRoute>
       },
       {
         path: 'updateProduct/:id',

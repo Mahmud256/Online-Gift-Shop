@@ -39,6 +39,15 @@ const Cart = () => {
     };
 
     const handleOrder = async () => {
+        const currentDateTime = new Date();
+        const formattedDate = new Intl.DateTimeFormat('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+        }).format(currentDateTime);
+
+        console.log(formattedDate);
+
         const orderDetails = {
             amount: totalPrice,
             currency: 'BDT',
@@ -48,11 +57,13 @@ const Cart = () => {
             customer_city: location[0].city,
             customer_area: location[0].area,
             customer_address: location[0].address,
+            date: formattedDate, 
 
             cart: cart.map(product => ({
                 product_name: product.name,
                 brand: product.brand,
                 category: product.category,
+                price: product.price,
                 description: product.description,
                 photos: product.photos
             }))

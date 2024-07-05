@@ -49,6 +49,11 @@ const Dashboard = () => {
                                     <FontAwesomeIcon icon={faBox} /> Product
                                 </NavLink>
                             </li>
+                            <li>
+                                <NavLink to="/profile/manageOrder">
+                                    <FontAwesomeIcon icon={faBox} />Manage Order
+                                </NavLink>
+                            </li>
 
                         </>
                         :
