@@ -21,6 +21,7 @@ import AddLocation from "../page/Profile/Location/AddLocation";
 import Location from "../page/Profile/Location/Location";
 import UpdateLocation from "../page/Profile/Location/updateLocation";
 import ManageOrder from "../page/Profile/ManageOrder/ManageOrder";
+import PaymentSuccess from "../page/Profile/PaymentSucess/PaymentSucess";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -56,10 +57,15 @@ const router = createBrowserRouter([
         element: <Signup></Signup>
       },
       {
+        path: '/payments/success/:tran_id',
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+      {
         path: '/details/:_id',
         element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
         loader: () => fetch(`https://online-gift-shop-server.vercel.app/product`)
       }
+
 
     ]
   },
