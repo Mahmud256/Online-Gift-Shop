@@ -8,7 +8,7 @@ import Pagination from '../../Pagination/Pagination';
 import ProductSearch from '../ProductSearch/ProductSearch';
 
 const Products = () => {
-    const { selectedCategory, handleCategoryChange, filteredProduct } = useFilteredProduct();
+    const { selectedCategory, handleCategoryChange, filteredProduct, availableCategory } = useFilteredProduct();
     const [isHoveredList, setIsHoveredList] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [productPerPage, setProductPerPage] = useState(8); // Default value
@@ -82,6 +82,7 @@ const Products = () => {
                                 <FaRegListAlt className="mr-2" />
                             )}
                         </span>
+
                         <select
                             id="categorySelect"
                             value={selectedCategory}
@@ -89,15 +90,9 @@ const Products = () => {
                             className="focus:outline-none text-gray-700 hover:font-bold"
                         >
                             <option value="all">Select Category</option>
-                            <option value="all">All</option>
-                            <option value="smartphone">Smartphone</option>
-                            <option value="automobile">Automobile</option>
-                            <option value="laptop">Laptop</option>
-                            <option value="earbuds">Earbuds</option>
-                            <option value="office equipment">Office Equipment</option>
-                            <option value="t-Shirt">T-Shirt</option>
-                            <option value="wardrobe">Wardrobe</option>
-                            <option value="tv">TV</option>
+                            {availableCategory.map((category) => (
+                                <option key={category} value={category}>{category}</option>
+                            ))}
                         </select>
                     </div>
                 </li>

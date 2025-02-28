@@ -18,7 +18,7 @@ const Navbar = () => {
   const [cart] = useCart();
 
   const [isHoveredHome, setIsHoveredHome] = useState(false);
-  // const [isHoveredList, setIsHoveredList] = useState(false);
+  const [isHoveredList, setIsHoveredList] = useState(false);
   const [isHoveredOffer, setIsHoveredOffer] = useState(false);
   const [isHoveredCart, setIsHoveredCart] = useState(false);
 
@@ -35,13 +35,14 @@ const Navbar = () => {
     setIsHoveredHome(false);
   };
 
-  // const handleMouseEnterList = () => {
-  //   setIsHoveredList(true);
-  // };
+  const handleMouseEnterList = () => {
 
-  // const handleMouseLeaveList = () => {
-  //   setIsHoveredList(false);
-  // };
+    setIsHoveredList(true);
+  };
+
+  const handleMouseLeaveList = () => {
+    setIsHoveredList(false);
+  };
 
 
   const handleMouseEnterOffer = () => {
@@ -88,7 +89,7 @@ const Navbar = () => {
         </NavLink>
       </li>
 
-      {/* <li>
+      <li>
         <NavLink to="/category">
           <div
             className={`flex items-center text-gray-700`}
@@ -105,7 +106,7 @@ const Navbar = () => {
             <p className='text-base font-bold m-2'>Shop By Category</p>
           </div>
         </NavLink>
-      </li> */}
+      </li>
 
       {/* <li>
         <NavLink to="/offer">

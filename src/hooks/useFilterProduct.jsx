@@ -2,22 +2,21 @@ import { useState } from 'react';
 import useProduct from './useProduct';
 
 const useFilteredProduct = () => {
-    const [product] = useProduct();
-    const [selectedCategory, setselectedCategory] = useState('all');
+    const [products] = useProduct(); // Ensure it's destructured properly
+    const [selectedCategory, setSelectedCategory] = useState('all');
 
     const handleCategoryChange = (event) => {
-        setselectedCategory(event.target.value);
-    }
+        setSelectedCategory(event.target.value);
+    };
 
-    const filteredProduct = product.filter((product) => {
-        if (selectedCategory === 'all') {
-            return true;
-        } else {
-            return product.category === selectedCategory;
-        }
-    });
+    // Extract unique categories from the product list
+    const availableCategory = ['all', ...new Set(products.map(product => product.category))];
 
-    return { selectedCategory, handleCategoryChange, filteredProduct };
+    const filteredProduct = products.filter((product) => 
+        selectedCategory === 'all' || product.category === selectedCategory
+    );
+
+    return { selectedCategory, handleCategoryChange, filteredProduct, availableCategory };
 };
 
 export default useFilteredProduct;
