@@ -12,6 +12,7 @@ const Cart = () => {
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const [location] = useLocation();
+    console.log("location:", location);
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -82,11 +83,11 @@ const Cart = () => {
             amount: totalPrice,
             currency: 'BDT',
             product_name: 'Your Products',
-            customer_name: 'John Doe', // Replace with dynamic customer name
-            customer_email: 'john@example.com', // Replace with dynamic customer email
-            customer_phone: '0123456789', // Replace with dynamic customer phon
+            customer_name: location[0]?.name || 'Unknown',
+            customer_email: location[0]?.email || 'unknown@example.com',
+            customer_phone: location[0]?.phone || '0000000000',
         };
-
+        console.log("bal:",paymentDetails);
         try {
             // Manage order first
             await handleOrder();
@@ -120,7 +121,7 @@ const Cart = () => {
                 If You Don't Add A Shipping Location, Your Payment Will Not Be Done!!!
             </Marquee>
             <Marquee className='text-green-600 text-2xl font-bold' direction="right">
-                Please Check My Location. 
+                Please Check My Location.
             </Marquee>
             <div className="overflow-x-auto">
                 <table className="table w-full">
