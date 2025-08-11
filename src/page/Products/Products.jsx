@@ -5,17 +5,13 @@ import { FaRegListAlt } from 'react-icons/fa';
 import useFilteredProduct from '../../hooks/useFilterProduct';
 import ProductsCard from './ProductsCard';
 import Pagination from '../../Pagination/Pagination';
-import ProductSearch from '../ProductSearch/ProductSearch';
 
 const Products = () => {
     const { selectedCategory, handleCategoryChange, filteredProduct, availableCategory } = useFilteredProduct();
     const [isHoveredList, setIsHoveredList] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [productPerPage, setProductPerPage] = useState(8); // Default value
-    const [searchTerm, setSearchTerm] = useState('');
-    const [showResults, setShowResults] = useState(false);
+    const [productPerPage, setProductPerPage] = useState(8);
 
-    // Function to determine the product per page based on screen size
     const determineProductPerPage = () => {
         if (window.innerWidth <= 640) {
             setProductPerPage(20);
@@ -24,7 +20,6 @@ const Products = () => {
         }
     };
 
-    // useEffect hook to run the function when the component mounts and when the window size changes
     useEffect(() => {
         determineProductPerPage();
         window.addEventListener('resize', determineProductPerPage);
@@ -41,21 +36,12 @@ const Products = () => {
         setIsHoveredList(false);
     };
 
-    const handleSearch = (show) => {
-        setShowResults(show);
-        setCurrentPage(1); // Reset to the first page on search
-    };
-
-    const filteredProducts = filteredProduct.filter(product =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
     const indexOfLastProduct = currentPage * productPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productPerPage;
-    const displayProduct = (showResults ? filteredProducts : filteredProduct).slice(indexOfFirstProduct, indexOfLastProduct);
+    const displayProduct = filteredProduct.slice(indexOfFirstProduct, indexOfLastProduct);
 
     const handlePageChange = (newPage) => {
-        if (newPage <= Math.ceil((showResults ? filteredProducts.length : filteredProduct.length) / productPerPage) && newPage >= 1) {
+        if (newPage <= Math.ceil(filteredProduct.length / productPerPage) && newPage >= 1) {
             setCurrentPage(newPage);
         }
     };
@@ -65,9 +51,7 @@ const Products = () => {
             <h1 className="text-3xl text-red-700 font-bold text-center pt-12" data-aos="fade-up">
                 Our Products
             </h1>
-            <div className='mt-4'>
-                <ProductSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} />
-            </div>
+
             <ul className="flex text-lg justify-center space-x-4 my-4">
                 <li>
                     <div
@@ -97,6 +81,7 @@ const Products = () => {
                     </div>
                 </li>
             </ul>
+
             {displayProduct.length > 0 ? (
                 <div className="Allserv flex justify-around py-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -110,7 +95,7 @@ const Products = () => {
             )}
 
             <Pagination
-                totalProduct={showResults ? filteredProducts.length : filteredProduct.length}
+                totalProduct={filteredProduct.length}
                 productPerPage={productPerPage}
                 currentPage={currentPage}
                 onPageChange={handlePageChange}
