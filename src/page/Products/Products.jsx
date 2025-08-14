@@ -47,7 +47,7 @@ const Products = () => {
     };
 
     return (
-        <div>
+        <div className='overflow-auto'>
             <h1 className="text-3xl text-red-700 font-bold text-center pt-12" data-aos="fade-up">
                 Our Products
             </h1>

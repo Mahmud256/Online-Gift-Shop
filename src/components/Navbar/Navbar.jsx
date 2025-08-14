@@ -56,7 +56,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-4 bg-white shadow-md relative">
+    <nav className="p-4 bg-white shadow-md sticky top-0 z-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <h2 className="text-lg lg:text-5xl font-bold">
