@@ -24,8 +24,12 @@ const Navbar = () => {
 
   // Filter suggestions
   useEffect(() => {
+    if (!Array.isArray(filteredProduct)) return;
+
     if (searchTerm.trim() === '') {
-      setSuggestions([]);
+      if (suggestions.length > 0) {
+        setSuggestions([]);
+      }
       setShowDropdown(false);
       return;
     }
@@ -34,9 +38,14 @@ const Navbar = () => {
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    setSuggestions(matches.slice(0, 5));
+    const newSuggestions = matches.slice(0, 5);
+
+    // Only update if actually different
+    if (JSON.stringify(newSuggestions) !== JSON.stringify(suggestions)) {
+      setSuggestions(newSuggestions);
+    }
     setShowDropdown(true);
-  }, [searchTerm, filteredProduct]);
+  }, [searchTerm, filteredProduct, suggestions]); // dependencies remain
 
   const handleHover = (key, value) => {
     setHovered((prev) => ({ ...prev, [key]: value }));
