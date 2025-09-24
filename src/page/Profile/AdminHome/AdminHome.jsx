@@ -20,7 +20,10 @@ const AdminHome = () => {
   }, []);
 
   // ✅ Calculate stats per product
-  const allProducts = orders.flatMap(order => order.cart || []);
+  const allProducts = orders.flatMap(order =>
+    order.cart.map(product => ({ ...product, customer: order.customer_name, email: order.customer_email, date: order.date }))
+  );
+
 
   const totalOrders = allProducts.length;
   const totalRevenue = allProducts.reduce(
@@ -74,29 +77,27 @@ const AdminHome = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order, orderIndex) =>
-                order.cart.map((product, idx) => (
-                  <tr key={`${order._id}-${product._id}`} className="hover:bg-gray-50">
-                    <td className="px-4 py-2 border">{idx + 1}</td>
-                    <td className="px-4 py-2 border">{product.product_name}</td>
-                    <td className="px-4 py-2 border">{order.customer_name}</td>
-                    <td className="px-4 py-2 border">{order.customer_email}</td>
-                    <td className="px-4 py-2 border">{order.date}</td>
-                    <td className="px-4 py-2 border">{product.price} ৳</td>
-                    <td className="px-4 py-2 border">
-                      <span
-                        className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                          product.status === "Pending"
-                            ? "bg-yellow-100 text-yellow-700"
-                            : "bg-green-100 text-green-700"
+              {allProducts.map((product, index) => (
+                <tr key={product._id} className="hover:bg-gray-50">
+                  <td className="px-4 py-2 border">{index + 1}</td> {/* ✅ Serial number works now */}
+                  <td className="px-4 py-2 border">{product.product_name}</td>
+                  <td className="px-4 py-2 border">{product.customer}</td>
+                  <td className="px-4 py-2 border">{product.email}</td>
+                  <td className="px-4 py-2 border">{product.date}</td>
+                  <td className="px-4 py-2 border">{product.price} ৳</td>
+                  <td className="px-4 py-2 border">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${product.status === "Pending"
+                        ? "bg-yellow-100 text-yellow-700"
+                        : "bg-green-100 text-green-700"
                         }`}
-                      >
-                        {product.status}
-                      </span>
-                    </td>
-                  </tr>
-                ))
-              )}
+                    >
+                      {product.status}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+
             </tbody>
           </table>
         </div>
