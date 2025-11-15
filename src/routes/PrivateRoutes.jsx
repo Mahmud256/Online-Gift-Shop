@@ -6,12 +6,18 @@ const PrivateRoutes = ({ children }) => {
     const { user, loading } = useAuth();
     const location = useLocation();
 
-    if(loading)
-    {
-        return <span className="loading loading-spinner text-primary"></span>; 
+    if (loading) {
+        return (
+            <div className="flex flex-col items-center justify-center h-screen">
+                <div className="w-16 h-16 border-4 border-red-400 border-dashed rounded-full animate-spin"></div>
+                <p className="mt-4 text-lg font-medium text-red-500 animate-pulse">
+                    Loading, please wait...
+                </p>
+            </div>
+        );
     }
 
-    if(user){
+    if (user) {
         return children;
     }
 
