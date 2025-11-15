@@ -22,6 +22,7 @@ import Location from "../page/Profile/Location/Location";
 import UpdateLocation from "../page/Profile/Location/updateLocation";
 import ManageOrder from "../page/Profile/ManageOrder/ManageOrder";
 import PaymentSuccess from "../page/Profile/PaymentSucess/PaymentSucess";
+import PaymentHistory from "../page/Profile/PaymentHistory/PaymentHistory";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: 'userHome',
         element: <UserHome></UserHome>
+      },
+      {
+        path: 'paymentHistory',
+        element: <PaymentHistory></PaymentHistory>
       },
       {
         path: 'cart',

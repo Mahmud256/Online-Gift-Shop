@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { MdAdminPanelSettings, MdOutlineAddBusiness } from 'react-icons/md';
 import { FaHome, FaUsers } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faShoppingCart, faBox, faPlus, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faShoppingCart, faBox, faPlus, faLocationDot, faWallet } from '@fortawesome/free-solid-svg-icons';
 
 
 const Dashboard = () => {
@@ -61,25 +61,39 @@ const Dashboard = () => {
                         <>
                             <li>
                                 <NavLink to="/profile/userHome">
-                                    <FontAwesomeIcon icon={faUser} /> User Profile
+                                    <FontAwesomeIcon icon={faUser} className="mr-2" />
+                                    User Profile
+                                </NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink to="/profile/paymentHistory">
+                                    <FontAwesomeIcon icon={faWallet} className="mr-2" />
+                                    Payment History
                                 </NavLink>
                             </li>
 
                             <li>
                                 <NavLink to="/profile/cart">
-                                    <FontAwesomeIcon icon={faShoppingCart} /> Cart
+                                    <FontAwesomeIcon icon={faShoppingCart} className="mr-2" />
+                                    Cart
                                 </NavLink>
                             </li>
+
                             <li>
                                 <NavLink to="/profile/location">
-                                <FontAwesomeIcon icon={faPlus} />Add Shipping Location
+                                    <FontAwesomeIcon icon={faPlus} className="mr-2" />
+                                    Add Shipping Location
                                 </NavLink>
                             </li>
+
                             <li>
                                 <NavLink to="/profile/mylocation">
-                                <FontAwesomeIcon icon={faLocationDot} />My Location
+                                    <FontAwesomeIcon icon={faLocationDot} className="mr-2" />
+                                    My Location
                                 </NavLink>
                             </li>
+
 
                         </>
                     }
