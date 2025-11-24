@@ -7,7 +7,7 @@ const Home = () => {
     const allproducts = useLoaderData();
     console.log(allproducts);
     return (
-        <div>
+        <div className='bg-[#f2f4f8]'>
             <Banner></Banner>
             <Products allproducts={allproducts}></Products>
         </div>

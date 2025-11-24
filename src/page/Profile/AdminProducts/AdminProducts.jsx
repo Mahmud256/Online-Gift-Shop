@@ -11,7 +11,7 @@ const AdminProduct = () => {
 
     const axiosSecure = useAxiosSecure();
 
-    const { selectedCategory, handleCategoryChange, filteredProduct } = useFilteredProduct();
+    const { selectedCategory, handleCategoryChange, filteredProduct, availableCategory } = useFilteredProduct();
 
     const handleRemove = (_id) => {
         Swal.fire({
@@ -60,14 +60,9 @@ const AdminProduct = () => {
                     className="w-40 p-2 border rounded-md shadow-sm focus:ring focus:ring-indigo-300 focus:outline-none text-gray-700"
                 >
                     <option value="all">Select Category</option>
-                    <option value="smartphone">Smartphone</option>
-                    <option value="automobile">Automobile</option>
-                    <option value="laptop">Laptop</option>
-                    <option value="earbuds">Earbuds</option>
-                    <option value="office equipment">Office Equipment</option>
-                    <option value="t-Shirt">T-Shirt</option>
-                    <option value="wardrobe">Wardrobe</option>
-                    <option value="tv">TV</option>
+                    {availableCategory.map((category) => (
+                        <option key={category} value={category}>{category}</option>
+                    ))}
                 </select>
             </div>
             {filteredProduct.length > 0 ?

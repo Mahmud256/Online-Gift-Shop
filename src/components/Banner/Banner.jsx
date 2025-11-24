@@ -13,15 +13,13 @@ import ad3 from '../../assets/ad3.jpg'
 
 const Banner = () => {
     const images = [img1, img2, img3, img5, img6];
-    const advertise = [ad1,cd1];
     return (
-        <div className="flex flex-col lg:flex-row justify-center lg:items-start items-center gap-3">
-            <div className="ad1 hidden lg:block w-1/6">
-                {/* <img src={ad1} alt="" width="200" height="100" /> */}
+        <div className=" bal flex flex-col lg:flex-row justify-center lg:items-start items-center gap-3 py-4">
 
-                <Carousel showThumbs={false} axis autoPlay interval={3000} infiniteLoop>
+            <div className=" w-[70%]">
+                <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop>
                     {
-                        advertise.map((image, index) =>
+                        images.map((image, index) =>
                             <div key={index}>
                                 <img src={image} alt="" />
                             </div>
@@ -29,22 +27,11 @@ const Banner = () => {
                     }
                 </Carousel>
             </div>
-            <div className="lg:w-1/2 w-2/3">
-                <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop>
-                    {
-                        images.map((image, index) =>
-                            <div key={index}>
-                                <img src={image} alt=""/>
-                            </div>
-                        )
-                    }
-                </Carousel>
-            </div>
-            <div className="ad flex lg:flex-col gap-3 ">
-                <img src={ad1} className="lg:hidden" alt=""/>
+            <div className=" ad flex lg:flex-col gap-3 ">
+                <img src={ad1} className="lg:hidden" alt="" />
                 <span className="flex flex-col gap-3">
-                    <img src={ad2} alt="" width="200" height="100" />
-                    <img src={ad3} alt="" width="200" height="100" />
+                    <img src={ad2} alt="" width="300" height="200" />
+                    <img src={ad3} alt="" width="300" height="200" />
                 </span>
             </div>
         </div>

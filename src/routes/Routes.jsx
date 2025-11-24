@@ -17,6 +17,12 @@ import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import ProductDetails from "../page/Details/ProductDetails";
 import Cart from "../page/Profile/Cart/Cart";
 import AllUsers from "../page/Profile/AllUsers/AllUsers";
+import AddLocation from "../page/Profile/Location/AddLocation";
+import Location from "../page/Profile/Location/Location";
+import UpdateLocation from "../page/Profile/Location/updateLocation";
+import ManageOrder from "../page/Profile/ManageOrder/ManageOrder";
+import PaymentSuccess from "../page/Profile/PaymentSucess/PaymentSucess";
+import PaymentHistory from "../page/Profile/PaymentHistory/PaymentHistory";
 // import Product from "../page/ProductSearch/Product";
 
 
@@ -52,10 +58,15 @@ const router = createBrowserRouter([
         element: <Signup></Signup>
       },
       {
+        path: '/payments/success/:tran_id',
+        element: <PaymentSuccess></PaymentSuccess>,
+      },
+      {
         path: '/details/:_id',
         element: <PrivateRoutes><ProductDetails></ProductDetails></PrivateRoutes>,
         loader: () => fetch(`https://online-gift-shop-server.vercel.app/product`)
       }
+
 
     ]
   },
@@ -70,9 +81,26 @@ const router = createBrowserRouter([
         element: <UserHome></UserHome>
       },
       {
+        path: 'paymentHistory',
+        element: <PaymentHistory></PaymentHistory>
+      },
+      {
         path: 'cart',
         element: <Cart></Cart>
-    },
+      },
+      {
+        path:'location',
+        element: <AddLocation></AddLocation>
+      },
+      {
+        path:'mylocation',
+        element: <Location></Location>
+      },
+      {
+        path: 'updateLocation/:id',
+        element: <UpdateLocation></UpdateLocation>,
+        loader: ({ params }) => fetch(`https://online-gift-shop-server.vercel.app/location/${params.id}`)
+      },
 
       // Admin Route
       {
@@ -82,7 +110,7 @@ const router = createBrowserRouter([
       {
         path: 'users',
         element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-    },
+      },
       {
         path: 'addProduct',
         element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
@@ -90,6 +118,10 @@ const router = createBrowserRouter([
       {
         path: 'adminProducts',
         element: <AdminRoute><AdminProducts></AdminProducts></AdminRoute>
+      },
+      {
+        path: 'manageOrder',
+        element: <AdminRoute><ManageOrder></ManageOrder></AdminRoute>
       },
       {
         path: 'updateProduct/:id',

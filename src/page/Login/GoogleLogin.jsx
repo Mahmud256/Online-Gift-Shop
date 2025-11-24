@@ -4,15 +4,13 @@ import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
 const GoogleLogin = () => {
-
-
-    // const { loginWithGoogle } = useAuth();
     const auth = getAuth();
     const axiosPublic = useAxiosPublic();
     const provider = new GoogleAuthProvider();
     const location = useLocation();
     const navigate = useNavigate();
 
+    const from = location.state?.from?.pathname || "/";
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
@@ -20,29 +18,27 @@ const GoogleLogin = () => {
                 const userInfo = {
                     email: result.user?.email,
                     name: result.user?.displayName
-                }
-                console.log('User Info:', userInfo); // Check if the user object is correctly populated
+                };
+                console.log("User Info:", userInfo);
 
-                // setUser(userInfo);
-
-                // Display a success message with SweetAlert2
-                axiosPublic.post('/users', userInfo)
-                    .then(res => {
-                        console.log("Done:",res.data);
-                        navigate(location?.state ? location.state : '/');
-
-                    })
+                axiosPublic.post("/users", userInfo)
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    });
             })
             .catch((error) => {
                 console.error(error);
-            })
-    }
-
+            });
+    };
 
     return (
         <div>
-            <p className="text-center">Or Login With<button onClick={handleGoogleSignIn} className='btn text-[2rem] w-full'><FcGoogle></FcGoogle>
-                Google</button></p>
+            <p className="text-center">
+                Or Login With
+                <button onClick={handleGoogleSignIn} className="btn text-[2rem] w-full">
+                    <FcGoogle /> Google
+                </button>
+            </p>
         </div>
     );
 };
