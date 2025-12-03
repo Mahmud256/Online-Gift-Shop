@@ -1,9 +1,8 @@
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt, FaUser, FaUsers } from "react-icons/fa";
+import { FaTrashAlt, FaUser } from "react-icons/fa";
 import { FaUserShield } from "react-icons/fa6";
 import Swal from "sweetalert2";
-
 
 const AllUsers = () => {
     const axiosSecure = useAxiosSecure();
@@ -14,6 +13,13 @@ const AllUsers = () => {
             return res.data;
         }
     })
+
+    // 🔥 Sort users so admin is always SL = 1
+    const sortedUsers = [...users].sort((a, b) => {
+        if (a.role === 'admin') return -1;
+        if (b.role === 'admin') return 1;
+        return 0;
+    });
 
     const handleDeleteUser = user => {
         Swal.fire({
@@ -33,7 +39,7 @@ const AllUsers = () => {
                             refetch();
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "User has been deleted.",
                                 icon: "success"
                             });
                         }
@@ -48,6 +54,7 @@ const AllUsers = () => {
                 <h2 className="text-3xl mb-2 md:mb-0">All Users</h2>
                 <h2 className="text-3xl">Total Users: {users.length}</h2>
             </div>
+
             <div className="overflow-x-auto">
                 <table className="min-w-full bg-white">
                     <thead className="bg-gray-800 text-white">
@@ -60,11 +67,14 @@ const AllUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {users.map((user, index) => (
+                        {sortedUsers.map((user, index) => (
                             <tr key={user._id} className="text-center border-t">
+                                {/* SL — admin always first */}
                                 <td className="py-2">{index + 1}</td>
+
                                 <td className="py-2">{user.name}</td>
                                 <td className="py-2">{user.email}</td>
+
                                 <td className="py-2">
                                     {user.role === 'admin' ? (
                                         <span className="text-red-600 font-bold flex items-center justify-center">
@@ -76,15 +86,20 @@ const AllUsers = () => {
                                         </div>
                                     )}
                                 </td>
+
                                 <td className="py-2">
-                                    <button
-                                        onClick={() => handleDeleteUser(user)}
-                                        className="btn btn-ghost btn-lg"
-                                        aria-label={`Delete ${user.name}`}
-                                    >
-                                        <FaTrashAlt className="text-red-600 text-2xl" />
-                                    </button>
+                                    {/* ❌ Hide delete icon for admin */}
+                                    {user.role !== "admin" && (
+                                        <button
+                                            onClick={() => handleDeleteUser(user)}
+                                            className="btn btn-ghost btn-lg"
+                                            aria-label={`Delete ${user.name}`}
+                                        >
+                                            <FaTrashAlt className="text-red-600 text-2xl" />
+                                        </button>
+                                    )}
                                 </td>
+
                             </tr>
                         ))}
                     </tbody>
