@@ -3,89 +3,161 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
-
+import { FaShoppingCart, FaStar } from "react-icons/fa";
 
 const ProductDetailsCard = ({ product }) => {
-  const { _id, name, brand, price, category, photos, description } = product || {};
+  const {
+    _id,
+    name,
+    brand,
+    price,
+    category,
+    photos,
+    description,
+  } = product || {};
 
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [, refetch] = useCart();
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
 
   const handleAddToCart = () => {
     if (user && user.email) {
-        //send item to the database
-        const cartProduct = {
-            productId: _id,
-            email: user.email,
-            name,
-            brand,
-            category,
-            description,
-            photos,
-            price
+      const cartProduct = {
+        productId: _id,
+        email: user.email,
+        name,
+        brand,
+        category,
+        description,
+        photos,
+        price,
+      };
 
+      axiosSecure.post("cart", cartProduct).then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${name} added to your cart`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+
+          refetch();
         }
-        console.log(cartProduct);
-        axiosSecure.post('cart', cartProduct)
-            .then(res => {
-                if (res.data.insertedId) {
-                    Swal.fire({
-                        position: "top-end",
-                        icon: "success",
-                        title: `${name} added to your cart`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    // refetch cart to update the cart items count
-                    refetch()
-                }
-            })
-
-
+      });
+    } else {
+      Swal.fire({
+        title: "You are not logged in",
+        text: "Please login to add products to cart",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#2563eb",
+        cancelButtonColor: "#ef4444",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", {
+            state: { from: location },
+          });
+        }
+      });
     }
-    else {
-        Swal.fire({
-            title: "You are not Login",
-            text: "Please Login add to the Cart",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, Login"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                //send the user to the login
-                navigate('/login', { state: { from: location } })
-            }
-        });
-    }
-}
+  };
 
   return (
-    <div className="flex justify-center items-center">
-      {/* Left Side - Product Image */}
-      <div className="w-1/2 flex justify-center">
-        <img src={photos} alt="Product" className="w-[60%] max-h-full" />
+    <section className="max-w-7xl mx-auto px-4 py-10">
+      <div className="bg-white rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 p-6 md:p-10">
+
+        {/* Product Image */}
+        <div className="bg-gray-100 rounded-2xl flex items-center justify-center p-8 relative group">
+          <img
+            src={photos}
+            alt={name}
+            className="w-full max-w-md object-contain transition duration-500 group-hover:scale-105"
+          />
+
+          {/* Category Badge */}
+          <span className="absolute top-5 left-5 bg-blue-600 text-white text-xs px-4 py-2 rounded-full shadow">
+            {category}
+          </span>
+        </div>
+
+        {/* Product Details */}
+        <div className="flex flex-col justify-center">
+
+          {/* Brand */}
+          <p className="text-sm uppercase tracking-widest text-blue-600 font-semibold mb-2">
+            {brand}
+          </p>
+
+          {/* Product Name */}
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 leading-tight mb-4">
+            {name}
+          </h1>
+
+          {/* Ratings */}
+          <div className="flex items-center gap-1 text-yellow-400 mb-5">
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <span className="text-gray-500 text-sm ml-2">
+              (5.0 Reviews)
+            </span>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed mb-6">
+            {description}
+          </p>
+
+          {/* Price */}
+          <div className="mb-8">
+            <span className="text-gray-500 text-lg">
+              Price
+            </span>
+
+            <h2 className="text-4xl font-extrabold text-blue-600">
+              ৳ {price}
+            </h2>
+          </div>
+
+          {/* Features */}
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="bg-gray-100 rounded-xl p-4">
+              <p className="text-sm text-gray-500">
+                Brand
+              </p>
+              <h4 className="font-bold text-gray-800">
+                {brand}
+              </h4>
+            </div>
+
+            <div className="bg-gray-100 rounded-xl p-4">
+              <p className="text-sm text-gray-500">
+                Category
+              </p>
+              <h4 className="font-bold text-gray-800">
+                {category}
+              </h4>
+            </div>
+          </div>
+
+          {/* Buttons */}
+          <button
+            onClick={handleAddToCart}
+            className="border-2 flex items-center justify-center gap-3 border-gray-300 hover:border-blue-600 hover:text-blue-600 px-8 py-4 rounded-xl font-semibold transition duration-300">
+
+            <FaShoppingCart />
+            Add To Cart
+          </button>
+        </div>
       </div>
-
-      {/* Right Side - Product Details */}
-      <div className="w-1/2 px-8">
-        <h1 className="text-2xl font-bold mb-2">{name}</h1>
-        <p className="text-gray-600 mb-2">Brand: {brand}</p>
-        <p className="text-gray-800 mb-4">{description}</p>
-        <p className="text-xl font-bold mb-4">Price: <span className='text-blue-500'><span className="text-lg font-black">৳</span> {price}</span></p>
-
-     
-
-        {/* Add to Cart Button */}
-        <button onClick={handleAddToCart} className="bg-blue-200 hover:bg-blue-600 text-blue-500 hover:text-white px-4 py-2 rounded-md focus:outline-none focus:bg-blue-600">
-          Add to Cart
-        </button>
-      </div>
-    </div>
+    </section>
   );
 };
 

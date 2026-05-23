@@ -87,7 +87,7 @@ const Cart = () => {
             customer_email: location[0]?.email || 'unknown@example.com',
             customer_phone: location[0]?.phone || '0000000000',
         };
-        console.log("bal:",paymentDetails);
+        console.log(paymentDetails);
         try {
             // Manage order first
             await handleOrder();

@@ -14,8 +14,8 @@ const ProductDetails = () => {
     }, [_id, details])
 
     return (
-        <div>
-            <h1 className='text-3xl text-red-700 font-bold text-center pt-12' data-aos="fade-up">Product Details</h1>
+        <div className='bg-gray-50'>
+            <h1 className='text-4xl text-gray-800 font-extrabold text-center pt-12' data-aos="fade-up">Product Details</h1>
             <ProductDetailsCard product={product}></ProductDetailsCard>
         </div>
     );

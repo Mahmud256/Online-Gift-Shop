@@ -14,7 +14,7 @@ import ad3 from '../../assets/ad3.jpg'
 const Banner = () => {
     const images = [img1, img2, img3, img5, img6];
     return (
-        <div className=" bal flex flex-col lg:flex-row justify-center lg:items-start items-center gap-3 py-4">
+        <div className="flex flex-col lg:flex-row justify-center lg:items-start items-center gap-3 py-4">
 
             <div className=" w-[70%]">
                 <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop>

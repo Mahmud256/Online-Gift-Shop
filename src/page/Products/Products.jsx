@@ -1,69 +1,84 @@
-import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListAlt } from '@fortawesome/free-solid-svg-icons';
-import { FaRegListAlt } from 'react-icons/fa';
-import useFilteredProduct from '../../hooks/useFilterProduct';
-import ProductsCard from './ProductsCard';
-import Pagination from '../../Pagination/Pagination';
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faListAlt } from "@fortawesome/free-solid-svg-icons";
+import { FaRegListAlt } from "react-icons/fa";
+import useFilteredProduct from "../../hooks/useFilterProduct";
+import ProductsCard from "./ProductsCard";
+import Pagination from "../../Pagination/Pagination";
 
 const Products = () => {
-    const { selectedCategory, handleCategoryChange, filteredProduct, availableCategory } = useFilteredProduct();
+    const {
+        selectedCategory,
+        handleCategoryChange,
+        filteredProduct,
+        availableCategory,
+    } = useFilteredProduct();
+
     const [isHoveredList, setIsHoveredList] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [productPerPage, setProductPerPage] = useState(8);
 
     const determineProductPerPage = () => {
         if (window.innerWidth <= 640) {
-            setProductPerPage(20);
-        } else {
             setProductPerPage(8);
+        } else {
+            setProductPerPage(12);
         }
     };
 
     useEffect(() => {
         determineProductPerPage();
-        window.addEventListener('resize', determineProductPerPage);
+        window.addEventListener("resize", determineProductPerPage);
+
         return () => {
-            window.removeEventListener('resize', determineProductPerPage);
+            window.removeEventListener("resize", determineProductPerPage);
         };
     }, []);
 
-    const handleMouseEnterList = () => {
-        setIsHoveredList(true);
-    };
-
-    const handleMouseLeaveList = () => {
-        setIsHoveredList(false);
-    };
-
     const indexOfLastProduct = currentPage * productPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productPerPage;
-    const displayProduct = filteredProduct.slice(indexOfFirstProduct, indexOfLastProduct);
+
+    const displayProduct = filteredProduct.slice(
+        indexOfFirstProduct,
+        indexOfLastProduct
+    );
 
     const handlePageChange = (newPage) => {
-        if (newPage <= Math.ceil(filteredProduct.length / productPerPage) && newPage >= 1) {
+        if (
+            newPage <= Math.ceil(filteredProduct.length / productPerPage) &&
+            newPage >= 1
+        ) {
             setCurrentPage(newPage);
         }
     };
 
     return (
-        <div className='overflow-auto'>
-            <h1 className="text-3xl text-red-700 font-bold text-center pt-12" data-aos="fade-up">
-                Our Products
-            </h1>
+        <section className="bg-gray-50 min-h-screen py-14">
+            <div className="max-w-7xl mx-auto px-4">
 
-            <ul className="flex text-lg justify-center space-x-4 my-4">
-                <li>
+                {/* Header */}
+                <div className="text-center mb-10">
+                    <h1 className="text-4xl font-extrabold text-gray-800">
+                        Our Products
+                    </h1>
+
+                    <p className="text-gray-500 mt-3 text-sm md:text-base">
+                        Explore our latest collection of premium products
+                    </p>
+                </div>
+
+                {/* Filter Section */}
+                <div className="flex justify-center mb-12">
                     <div
-                        className={`flex items-center w-56 p-2 border-4 border-red-700 rounded-md shadow-sm`}
-                        onMouseEnter={handleMouseEnterList}
-                        onMouseLeave={handleMouseLeaveList}
+                        className="flex items-center gap-3 bg-white shadow-md border border-gray-200 rounded-xl px-5 py-3 hover:shadow-lg transition duration-300"
+                        onMouseEnter={() => setIsHoveredList(true)}
+                        onMouseLeave={() => setIsHoveredList(false)}
                     >
-                        <span>
+                        <span className="text-red-600 text-xl">
                             {isHoveredList ? (
-                                <FontAwesomeIcon icon={faListAlt} size="lg" className="mr-2" />
+                                <FontAwesomeIcon icon={faListAlt} />
                             ) : (
-                                <FaRegListAlt className="mr-2" />
+                                <FaRegListAlt />
                             )}
                         </span>
 
@@ -71,36 +86,50 @@ const Products = () => {
                             id="categorySelect"
                             value={selectedCategory}
                             onChange={handleCategoryChange}
-                            className="focus:outline-none text-gray-700 hover:font-bold"
+                            className="bg-transparent focus:outline-none text-gray-700 font-medium cursor-pointer"
                         >
-                            <option value="all">Select Category</option>
+                            <option value="all">All Categories</option>
+
                             {availableCategory.map((category) => (
-                                <option key={category} value={category}>{category}</option>
+                                <option key={category} value={category}>
+                                    {category}
+                                </option>
                             ))}
                         </select>
                     </div>
-                </li>
-            </ul>
+                </div>
 
-            {displayProduct.length > 0 ? (
-                <div className="Allserv flex justify-around py-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {/* Products */}
+                {displayProduct.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {displayProduct.map((product) => (
-                            <ProductsCard key={product._id} product={product} />
+                            <div
+                                key={product._id}
+                                className="transform hover:-translate-y-2 transition duration-300"
+                            >
+                                <ProductsCard product={product} />
+                            </div>
                         ))}
                     </div>
-                </div>
-            ) : (
-                <p className="text-center h-screen flex flex-col justify-center items-center">No Data found</p>
-            )}
+                ) : (
+                    <div className="h-[50vh] flex justify-center items-center">
+                        <p className="text-xl font-semibold text-gray-500">
+                            No Products Found
+                        </p>
+                    </div>
+                )}
 
-            <Pagination
-                totalProduct={filteredProduct.length}
-                productPerPage={productPerPage}
-                currentPage={currentPage}
-                onPageChange={handlePageChange}
-            />
-        </div>
+                {/* Pagination */}
+                <div className="mt-14 flex justify-center">
+                    <Pagination
+                        totalProduct={filteredProduct.length}
+                        productPerPage={productPerPage}
+                        currentPage={currentPage}
+                        onPageChange={handlePageChange}
+                    />
+                </div>
+            </div>
+        </section>
     );
 };
 
